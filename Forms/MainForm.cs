@@ -29,9 +29,10 @@ namespace ExpenseManager
             base.OnLoad(e);
             EventSubscriber();
             ExpenseTableCreator();
+            CategoryTableSetter();
         }
 
-
+      
 
         private void EventSubscriber()
         {
@@ -154,11 +155,34 @@ namespace ExpenseManager
         #endregion
 
 
-        private void AddCategoryButtonClick(object sender, EventArgs e)
+        #region Category
+
+        private void CategoryTableSetter()
+        {
+            CategoryDataTable.Columns.Add("Id", typeof(string));
+            CategoryDataTable.Columns.Add("Name", typeof(string));
+            CategoryDataTable.Columns.Add(" ", typeof(Image));
+            CategoryDataTable.Columns.Add("  ", typeof(Image));
+            CategoryGrid.DataSource = CategoryDataTable;
+            CategoryTableDataSetter();
+        }
+
+        private void CategoryTableDataSetter()
+        {
+            CategoryDataTable.Rows.Clear();
+            ExpenseManagerClass.GetAllCategories().Values.ToList().ForEach((cat) =>
+            {
+                CategoryDataTable.Rows.Add(cat.CategoryId,cat.CategoryName,Properties.Resources.icons8_edit_24,Properties.Resources.icons8_remove_25);
+            });
+        }
+
+        private void CreateCategoryButtonClick(object sender, EventArgs e)
         {
             CategoryAddForm addForm = new CategoryAddForm();
             addForm.Show();
-        }
+        } 
+
+        #endregion
 
         #region Events
 
