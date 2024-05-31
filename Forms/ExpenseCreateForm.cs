@@ -19,8 +19,11 @@ namespace ExpenseManager.Forms
         {
             InitializeComponent();
             List<Category> categories=ExpenseManagerClass.GetAllCategories().Values.ToList();
+            categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
             CategoryBox.DataSource = categories;
             CategoryBox.DisplayMember = "CategoryName";
+            DateTimePicker.MinDate = new DateTime(2020, 1, 1);
+            DateTimePicker.MaxDate = DateTime.Now;
         }
 
         private void CreateButtonClick(object sender, EventArgs e)
@@ -33,6 +36,7 @@ namespace ExpenseManager.Forms
             if (res)
             {
                 Close();
+                MessageBox.Show("Expense Added Succesfully...!!!");
             }
             else
             {

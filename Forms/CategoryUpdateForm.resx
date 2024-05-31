@@ -117,35 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8-expense-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-expense-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-category-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-category-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-budget-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-budget-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-filter-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-filter-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-category-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-category-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_edit_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-edit-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_remove_25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-remove-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_rotate_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-rotate-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_rotate_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-rotate-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_refresh_25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-refresh-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

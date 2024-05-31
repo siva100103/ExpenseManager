@@ -69,7 +69,8 @@ C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\bin\Debug\System.Runtime.Co
 C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.exe.config
 C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.csproj.CopyComplete
-C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.Forms.CategoryAddForm.resources
 C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.csprojAssemblyReference.cache
 C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.Forms.ExpenseCreateForm.resources
 C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.Forms.ExpenseUpdateForm.resources
+C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.Forms.CategoryUpdateForm.resources
+C:\Users\Lucid\Desktop\ExpenseManager\ExpenseManager\obj\Debug\ExpenseManager.Forms.CategoryCreateForm.resources

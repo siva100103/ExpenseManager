@@ -2,5 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 /.vs/
-/.vs/ExpenseManager/v15
-/bin/Debug
+/bin
+

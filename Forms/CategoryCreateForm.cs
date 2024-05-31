@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace ExpenseManager.Forms
 {
-    public partial class CategoryAddForm : Form
+    public partial class CategoryCreateForm : Form
     {
-        public CategoryAddForm()
+        public CategoryCreateForm()
         {
             InitializeComponent();
         }
@@ -22,8 +22,12 @@ namespace ExpenseManager.Forms
         private void AddButtonClick(object sender, EventArgs e)
         {
             string name = NameTextBox.Text;
-            BooleanMsg res=ExpenseManagerClass.AddCategory(name);
-            if (res) Close();
+            BooleanMsg res=ExpenseManagerClass.CreateCategory(name);
+            if (res)
+            {
+                Close();
+                MessageBox.Show("CategoryAdded Successfully...!!!");
+            }
             else MessageBox.Show(res.Message);
         }
     }

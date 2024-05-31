@@ -20,18 +20,22 @@ namespace ExpenseManager.Forms
         {
             InitializeComponent();
             ExpenseId = Id;
+            DateTimePicker.MinDate = new DateTime(2020, 1, 1);
+            DateTimePicker.MaxDate = DateTime.Now;
             ValueSetter();
         }
 
         private void ValueSetter()
         {
-            CategoryBox.DataSource = ExpenseManagerClass.GetAllCategories().Values.ToList();
+            List<Category> categories= ExpenseManagerClass.GetAllCategories().Values.ToList();
+            categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
+            CategoryBox.DataSource = categories;
             CategoryBox.DisplayMember = "CategoryName";
             Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
             AmountSelector.Value = expense.ExpenseAmount;
             NotesTextBox.Text = expense.ExpenseNotes;
             DateTimePicker.Value = expense.ExpenseTime;
-            CategoryBox.SelectedItem = ExpenseManagerClass.GetCategory(expense.ExpenseCategoryId).Value;
+            CategoryBox.SelectedItem = ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId).Value;
         }
 
         private void UpdateButtonClick(object sender, EventArgs e)
@@ -44,6 +48,7 @@ namespace ExpenseManager.Forms
             if (res)
             {
                 Close();
+                MessageBox.Show("Expense Updated Successfully");
             }
             else
             {

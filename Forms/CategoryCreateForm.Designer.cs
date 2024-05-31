@@ -1,6 +1,6 @@
 ﻿namespace ExpenseManager.Forms
 {
-    partial class CategoryAddForm
+    partial class CategoryCreateForm
     {
         /// <summary>
         /// Required designer variable.
