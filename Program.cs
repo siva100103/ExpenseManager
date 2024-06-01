@@ -17,8 +17,16 @@ namespace ExpenseManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           
+            using(DbManager dbManager = new DbManager())
+            {
+                dbManager.Database.EnsureCreated();
+            }
             Application.Run(new MainForm());
+        }
+
+        private static void CheckForFiles()
+        {
+            
         }
     }
 }

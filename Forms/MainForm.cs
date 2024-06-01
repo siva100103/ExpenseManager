@@ -1,7 +1,9 @@
 ﻿using ExpenseManager.Forms;
 using ExpenseManager.ManagerClasses;
 using ExpenseManager.Models;
-using GoLibrary;
+using MySqlX.XDevAPI.Relational;
+
+//using GoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,14 +62,14 @@ namespace ExpenseManager
 
         private void ExpenseCreated(string ExpenseId)
         {
-            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
-            Category category = ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId);
-            ExpenseDataTable.Rows.Add(expense.ExpenseId, category.CategoryName, expense.ExpenseAmount, expense.ExpenseTime.ToString(), expense.ExpenseNotes, Properties.Resources.icons8_edit_24, Properties.Resources.icons8_remove_25);
+            Expense expense = (ExpenseManagerClass.ReadExpense(ExpenseId)).Value;
+            Category category = (ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId)).Value;
+            ExpenseDataTable.Rows.Add(expense.ExpenseId, category.CategoryName, expense.ExpenseAmount, expense.ExpenseTime.ToString(), expense.ExpenseNotes);
         }
 
         private void ExpenseUpdated(string ExpenseId)
         {
-            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
+            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId).Value;
             foreach (DataGridViewRow rows in ExpenseGrid.Rows)
             {
                 string Id = rows.Cells[0].Value.ToString();
@@ -97,8 +99,8 @@ namespace ExpenseManager
 
         private void CategoryCreated(string categoryId)
         {
-            Category category = ExpenseManagerClass.ReadCategory(categoryId);
-            CategoryDataTable.Rows.Add(categoryId, category.CategoryName, Properties.Resources.icons8_edit_24, Properties.Resources.icons8_remove_25);
+            Category category = (ExpenseManagerClass.ReadCategory(categoryId)).Value;
+            CategoryDataTable.Rows.Add(categoryId, category.CategoryName);
 
         }
 
@@ -149,7 +151,7 @@ namespace ExpenseManager
             Control c = sender as Control;
             if (SelectedPage == null || !c.Parent.Name.Equals(SelectedPage.Parent.Name))
             {
-                c.Parent.BackColor = Color.FromArgb(192, 255, 255);
+                c.Parent.BackColor = Color.Transparent;
                 c.Cursor = Cursors.Default;
             }
         }
@@ -162,13 +164,13 @@ namespace ExpenseManager
             else if (c.Parent.Name.Equals("SortPanel")) TabControl.SelectedIndex = 2;
             else if (c.Parent.Name.Equals("BudgetPanel")) TabControl.SelectedIndex = 3;
 
-            if (SelectedPage != null && SelectedPage.Parent.Name != c.Parent.Name) SelectedPage.Parent.BackColor = Color.FromArgb(192, 255, 255);
+            if (SelectedPage != null && SelectedPage.Parent.Name != c.Parent.Name) SelectedPage.Parent.BackColor = Color.Transparent;
             SelectedPage = c;
         }
         #endregion
 
         #region ExpensePage
-       
+
         private void ExpenseTableCreator()
         {
             ExpenseDataTable.Columns.Add("Id", typeof(string));
@@ -176,56 +178,51 @@ namespace ExpenseManager
             ExpenseDataTable.Columns.Add("Amount", typeof(int));
             ExpenseDataTable.Columns.Add("Time", typeof(string));
             ExpenseDataTable.Columns.Add("Notes", typeof(string));
-            ExpenseDataTable.Columns.Add(" ", typeof(Image));
-            ExpenseDataTable.Columns.Add("  ", typeof(Image));
             ExpenseGrid.DataSource = ExpenseDataTable;
+            ExpenseGrid.Columns[0].Visible = false;
             ExpenseTableDataSetter();
         }
-
         private void ExpenseTableDataSetter()
         {
             ExpenseDataTable.Rows.Clear();
 
             ExpenseManagerClass.ReadAllExpenses().Values.ToList().ForEach((exp) =>
             {
-                Category category = ExpenseManagerClass.ReadCategory(exp.ExpenseCategoryId);
-                ExpenseDataTable.Rows.Add(exp.ExpenseId, category.CategoryName, exp.ExpenseAmount, exp.ExpenseTime.ToString(), exp.ExpenseNotes, Properties.Resources.icons8_edit_24, Properties.Resources.icons8_remove_25);
+                Category category = (ExpenseManagerClass.ReadCategory(exp.ExpenseCategoryId)).Value;
+                ExpenseDataTable.Rows.Add(exp.ExpenseId, category.CategoryName, exp.ExpenseAmount, exp.ExpenseTime.ToString(), exp.ExpenseNotes);
             });
         }
-
         private void CreateExpenseButtonClick(object sender, EventArgs e)
         {
             ExpenseCreateForm createForm = new ExpenseCreateForm();
             createForm.Show();
         }
-
-        private void ExpenseGridCellClick(object sender, DataGridViewCellEventArgs e)
+        private void ExpenseUpdateButtonClick(object sender, EventArgs e)
         {
-            if (e.RowIndex != -1 && e.RowIndex < ExpenseGrid.Rows.Count && e.ColumnIndex == 5)
+            if (ExpenseGrid.SelectedRows.Count <= 0)
             {
-                string ExpenseId = ExpenseGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                ExpenseUpdateButtonClick(ExpenseId);
+                MessageBox.Show("Choose The Expense First");
+                return;
             }
-            else if (e.RowIndex != -1 && e.RowIndex < ExpenseGrid.Rows.Count && e.ColumnIndex == 6)
-            {
-                string ExpenseId = ExpenseGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                ExpenseDeleteButtonClick(ExpenseId);
-            }
-        }
-
-        private void ExpenseUpdateButtonClick(string Id)
-        {
+            string Id = ExpenseGrid.Rows[ExpenseGrid.CurrentRow.Index].Cells[0].Value.ToString();
             ExpenseUpdateForm updateForm = new ExpenseUpdateForm(Id);
             updateForm.Show();
         }
-       
-        private void ExpenseDeleteButtonClick(string Id)
+        private void ExpenseDeleteButtonClick(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do You Really Want to Remove This Expense","Confirmation" ,MessageBoxButtons.YesNo);
+
+            if (ExpenseGrid.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Choose The Expense First");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Do You Really Want to Remove This Expense", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                BooleanMsg res=ExpenseManagerClass.DeleteExpense(Id);
-                if (res)
+                string Id = ExpenseGrid.Rows[ExpenseGrid.CurrentRow.Index].Cells[0].Value.ToString();
+                BooleanMsg res = ExpenseManagerClass.DeleteExpense(Id);
+                if (res.Result)
                 {
                     MessageBox.Show("Expense Deleted Successfully!!!");
                 }
@@ -233,6 +230,17 @@ namespace ExpenseManager
                 {
                     MessageBox.Show(res.Message);
                 }
+            }
+        }
+        private void ExpenseGridCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.RowIndex < ExpenseGrid.Rows.Count)
+            {
+                foreach (DataGridViewRow row in ExpenseGrid.Rows)
+                {
+                    row.Selected = false;
+                }
+                ExpenseGrid.Rows[e.RowIndex].Selected = true;
             }
         }
 
@@ -244,8 +252,6 @@ namespace ExpenseManager
         {
             CategoryDataTable.Columns.Add("Id", typeof(string));
             CategoryDataTable.Columns.Add("Name", typeof(string));
-            CategoryDataTable.Columns.Add(" ", typeof(Image));
-            CategoryDataTable.Columns.Add("  ", typeof(Image));
             CategoryGrid.DataSource = CategoryDataTable;
             CategoryTableDataSetter();
         }
@@ -257,7 +263,7 @@ namespace ExpenseManager
             categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
             categories.ForEach((cat) =>
             {
-                CategoryDataTable.Rows.Add(cat.CategoryId,cat.CategoryName,Properties.Resources.icons8_edit_24,Properties.Resources.icons8_remove_25);
+                CategoryDataTable.Rows.Add(cat.CategoryId, cat.CategoryName);
             });
         }
 
@@ -269,31 +275,40 @@ namespace ExpenseManager
 
         private void CategoryGridCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1 && e.RowIndex < CategoryGrid.Rows.Count && e.ColumnIndex == 2)
+            if (e.RowIndex != -1 && e.RowIndex < CategoryGrid.Rows.Count)
             {
-                string categoryId = CategoryGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                CategoryUpdateButtonClick(categoryId);
+                CategoryGrid.Rows[e.RowIndex].Selected = true;
             }
-            else if (e.RowIndex != -1 && e.RowIndex < CategoryGrid.Rows.Count && e.ColumnIndex == 3)
-            {
-                string categoryId = CategoryGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-                CategoryDeleteButtonClick(categoryId);
-            }
+
         }
 
-        private void CategoryUpdateButtonClick(string categoryId)
+        private void CategoryUpdateButtonClick(object sender, EventArgs e)
         {
+            if (CategoryGrid.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Choose Category First");
+                return;
+            }
+
+            string categoryId = CategoryGrid.CurrentRow.Cells[0].Value.ToString();
             CategoryUpdateForm updateForm = new CategoryUpdateForm(categoryId);
             updateForm.Show();
         }
 
-        private void CategoryDeleteButtonClick(string categoryId)
+        private void CategoryDeleteButtonClick(object sender, EventArgs e)
         {
+            if (CategoryGrid.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Choose Category First");
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Do You Want to Delete This Category..??", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                BooleanMsg res=ExpenseManagerClass.DeleteCategory(categoryId);
-                if (res) MessageBox.Show("Category Deleted Successfully");
+                string categoryId = CategoryGrid.CurrentRow.Cells[0].Value.ToString();
+                BooleanMsg res = ExpenseManagerClass.DeleteCategory(categoryId);
+                if (res.Result) MessageBox.Show("Category Deleted Successfully");
                 else MessageBox.Show(res.Message);
             }
         }
@@ -304,7 +319,6 @@ namespace ExpenseManager
 
         private void SortTableCreator()
         {
-            SortDataTable.Columns.Add("Id", typeof(string));
             SortDataTable.Columns.Add("Category", typeof(string));
             SortDataTable.Columns.Add("Amount", typeof(int));
             SortDataTable.Columns.Add("Time", typeof(string));
@@ -328,7 +342,7 @@ namespace ExpenseManager
             expenses.Sort((exp1, exp2) => exp2.ExpenseTime.CompareTo(exp1.ExpenseTime));
             foreach (Expense expense in expenses)
             {
-                SortDataTable.Rows.Add(expense.ExpenseId, ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId).Value.CategoryName, expense.ExpenseAmount, expense.ExpenseTime, expense.ExpenseNotes);
+                SortDataTable.Rows.Add(ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId).Value.CategoryName, expense.ExpenseAmount, expense.ExpenseTime, expense.ExpenseNotes);
             }
         }
 
@@ -355,10 +369,11 @@ namespace ExpenseManager
             }
             FromPicker.MaxDate = ToPicker.Value;
             ToPicker.MinDate = FromPicker.Value;
-        } 
+        }
+
+
 
         #endregion
-
 
     }
 }

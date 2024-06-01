@@ -1,7 +1,8 @@
 ﻿using ExpenseManager.Models;
-using GoLibrary;
+//using GoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,7 +84,7 @@ namespace ExpenseManager.ManagerClasses
             {
                 Expense expense = DbContext.Expenses.Find(ExpenseId);
                 if (expense == null) return "Invalid ExpenseId";
-                Category category = ReadCategory(categoryId);
+                Category category = (ReadCategory(categoryId)).Value;
                 if (category == null) return "Invalid CategoryId";
                 if (amount <= 0) return "Amount Cannot Be Negative";
                 DbContext.Expenses.Remove(expense);
@@ -148,11 +149,12 @@ namespace ExpenseManager.ManagerClasses
             {
                 Category category = DbContext.Categories.Find(Id);
                 if (category == null) return "Invalid Category";
+                Category IsExist = DbContext.Categories.ToList().Find((cat) => cat.CategoryName.Equals(name));
+                if (IsExist != null) return "CategoryAlready Exists";
                 DbContext.Categories.Remove(category);
                 DbContext.SaveChanges();
 
-                Category IsExist = DbContext.Categories.ToList().Find((cat) => cat.CategoryName.Equals(name));
-                if (IsExist != null) return "CategoryAlready Exists";
+               
 
                 category.CategoryName = name;
                 DbContext.Categories.Add(category);
@@ -210,7 +212,6 @@ namespace ExpenseManager.ManagerClasses
                 return expenses[0].ExpenseTime;
             }
         }
-
         public static DateTime LastExpenseDate()
         {
             using (DbManager DbContext = new DbManager())
@@ -220,6 +221,10 @@ namespace ExpenseManager.ManagerClasses
                 expenses.Sort((ex1, ex2) => ex2.ExpenseTime.CompareTo(ex1.ExpenseTime));
                 return expenses[0].ExpenseTime;
             }
+        }
+        public static void MeasureStringHeight(string s,Font font)
+        {
+
         }
     }
 }

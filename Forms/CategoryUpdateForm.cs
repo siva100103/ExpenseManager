@@ -1,5 +1,7 @@
 ﻿using ExpenseManager.ManagerClasses;
-using GoLibrary;
+using ExpenseManager.Models;
+
+//using GoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +28,7 @@ namespace ExpenseManager.Forms
         {
             string name = NameTextBox.Text;
             BooleanMsg res = ExpenseManagerClass.UpdateCategory(categoryId,name);
-            if (res)
+            if (res.Result)
             {
                 Close();
                 MessageBox.Show("Category Updated Successfully...!!!");

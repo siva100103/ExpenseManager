@@ -1,6 +1,6 @@
 ﻿using ExpenseManager.ManagerClasses;
 using ExpenseManager.Models;
-using GoLibrary;
+//using GoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +33,7 @@ namespace ExpenseManager.Forms
             int amount = (int)AmountSelector.Value;
             string notes = NotesTextBox.Text;
             BooleanMsg res=ExpenseManagerClass.CreateExpense(category, amount, time, notes);
-            if (res)
+            if (res.Result)
             {
                 Close();
                 MessageBox.Show("Expense Added Succesfully...!!!");

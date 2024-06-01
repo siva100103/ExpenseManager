@@ -1,6 +1,6 @@
 ﻿using ExpenseManager.ManagerClasses;
 using ExpenseManager.Models;
-using GoLibrary;
+//using GoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +31,13 @@ namespace ExpenseManager.Forms
             categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
             CategoryBox.DataSource = categories;
             CategoryBox.DisplayMember = "CategoryName";
-            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
+            Expense expense = (ExpenseManagerClass.ReadExpense(ExpenseId)).Value;
+            if (expense == null)
+            {
+                Close();
+                MessageBox.Show("Invalid Expense");
+                return;
+            }
             AmountSelector.Value = expense.ExpenseAmount;
             NotesTextBox.Text = expense.ExpenseNotes;
             DateTimePicker.Value = expense.ExpenseTime;
@@ -45,7 +51,7 @@ namespace ExpenseManager.Forms
             DateTime time = DateTimePicker.Value;
             string notes = NotesTextBox.Text;
             BooleanMsg res = ExpenseManagerClass.UpdateExpense(ExpenseId,categoryId,amount,time,notes);
-            if (res)
+            if (res.Result)
             {
                 Close();
                 MessageBox.Show("Expense Updated Successfully");

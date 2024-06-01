@@ -23,7 +23,7 @@ namespace ExpenseManager.Migrations
                         .HasColumnType("varchar(36) CHARACTER SET utf8mb4");
 
                     b.Property<string>("CategoryName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("text");
 
                     b.HasKey("CategoryId");
 
@@ -39,13 +39,13 @@ namespace ExpenseManager.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ExpenseCategoryId")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("text");
 
                     b.Property<string>("ExpenseNotes")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("ExpenseTime")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.HasKey("ExpenseId");
 
