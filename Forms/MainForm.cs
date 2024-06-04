@@ -1,9 +1,8 @@
 ﻿using ExpenseManager.Forms;
 using ExpenseManager.ManagerClasses;
 using ExpenseManager.Models;
+using ExpenseManager.UserControls;
 using MySqlX.XDevAPI.Relational;
-
-//using GoLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,7 +100,6 @@ namespace ExpenseManager
         {
             Category category = (ExpenseManagerClass.ReadCategory(categoryId)).Value;
             CategoryDataTable.Rows.Add(categoryId, category.CategoryName);
-
         }
 
         private void CategoryUpdated(string categoryId)
@@ -188,8 +186,9 @@ namespace ExpenseManager
 
             ExpenseManagerClass.ReadAllExpenses().Values.ToList().ForEach((exp) =>
             {
-                Category category = (ExpenseManagerClass.ReadCategory(exp.ExpenseCategoryId)).Value;
-                ExpenseDataTable.Rows.Add(exp.ExpenseId, category.CategoryName, exp.ExpenseAmount, exp.ExpenseTime.ToString(), exp.ExpenseNotes);
+                //Category category = (ExpenseManagerClass.ReadCategory(exp.ExpenseCategoryId)).Value;
+                //ExpenseDataTable.Rows.Add(exp.ExpenseId, category.CategoryName, exp.ExpenseAmount, exp.ExpenseTime.ToString(), exp.ExpenseNotes);
+                ExpenseManagerClass.AddExistingExpense(exp.ExpenseId,exp.ExpenseCategoryId, exp.ExpenseAmount, exp.ExpenseTime, exp.ExpenseNotes);
             });
         }
         private void CreateExpenseButtonClick(object sender, EventArgs e)
@@ -340,10 +339,13 @@ namespace ExpenseManager
             SortPageComboBoxUpdater();
             List<Expense> expenses = ExpenseManagerClass.ReadExpenses(FromDate, ToDate, categoryId).Values.ToList();
             expenses.Sort((exp1, exp2) => exp2.ExpenseTime.CompareTo(exp1.ExpenseTime));
+            double totalSpends = 0;
             foreach (Expense expense in expenses)
             {
+                totalSpends += expense.ExpenseAmount;
                 SortDataTable.Rows.Add(ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId).Value.CategoryName, expense.ExpenseAmount, expense.ExpenseTime, expense.ExpenseNotes);
             }
+            AmountLabel.Text = totalSpends.ToString();
         }
 
         private void SortPageComboBoxUpdater()
@@ -371,9 +373,12 @@ namespace ExpenseManager
             ToPicker.MinDate = FromPicker.Value;
         }
 
-
-
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CategorySelector categorySelector = new CategorySelector();
+            
+        }
     }
 }

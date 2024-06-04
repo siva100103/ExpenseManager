@@ -32,7 +32,7 @@ namespace ExpenseManager.Forms
             DateTime time = DateTimePicker.Value;
             int amount = (int)AmountSelector.Value;
             string notes = NotesTextBox.Text;
-            BooleanMsg res=ExpenseManagerClass.CreateExpense(category, amount, time, notes);
+            BooleanMsg res=ExpenseManagerClass.CreateExpense(category.CategoryId, amount, time, notes);
             if (res.Result)
             {
                 Close();

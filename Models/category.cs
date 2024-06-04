@@ -19,7 +19,7 @@ namespace ExpenseManager.Models
 
         public Category()
         {
-           // CategoryId = UniqueIdGenerator();
+
         }
 
         private string UniqueIdGenerator() => Guid.NewGuid().ToString(); 

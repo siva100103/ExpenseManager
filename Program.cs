@@ -1,4 +1,5 @@
-﻿using ExpenseManager.ManagerClasses;
+﻿using ExpenseManager.Forms;
+using ExpenseManager.ManagerClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +18,16 @@ namespace ExpenseManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using(DbManager dbManager = new DbManager())
+            if (ExpenseManagerClass.CheckDbConfiguration())
             {
-                dbManager.Database.EnsureCreated();
+                Application.Run(new MainForm());
             }
-            Application.Run(new MainForm());
+            else
+            {
+                Application.Run(new DataBaseDetailsForm());
+            }
         }
 
-        private static void CheckForFiles()
-        {
-            
-        }
+
     }
 }

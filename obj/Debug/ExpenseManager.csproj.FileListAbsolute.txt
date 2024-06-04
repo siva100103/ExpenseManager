@@ -160,3 +160,6 @@ D:\Projects\ExpenseManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Projects\ExpenseManager\obj\Debug\ExpenseM.9A6462B3.Up2Date
 D:\Projects\ExpenseManager\obj\Debug\ExpenseManager.exe
 D:\Projects\ExpenseManager\obj\Debug\ExpenseManager.pdb
+D:\Projects\ExpenseManager\obj\Debug\ExpenseManager.Forms.DataBaseDetailsForm.resources
+D:\Projects\ExpenseManager\obj\Debug\ExpenseManager.Forms.BudgetSetForm.resources
+D:\Projects\ExpenseManager\obj\Debug\ExpenseManager.UserControls.CategorySelector.resources

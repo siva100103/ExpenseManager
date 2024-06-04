@@ -1,11 +1,14 @@
-﻿using ExpenseManager.Models;
+﻿using ExpenseManager.Forms;
+using ExpenseManager.Models;
+using Microsoft.EntityFrameworkCore.Storage;
+
 //using GoLibrary;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml;
+
 
 namespace ExpenseManager.ManagerClasses
 {
@@ -21,29 +24,49 @@ namespace ExpenseManager.ManagerClasses
         public static event Informer CategoryUpdated;
         public static event Informer CategoryDeleted;
 
+        public static Dictionary<string, double> SpendedAmount = new Dictionary<string, double>();
+
         #region Expense
 
-        public static BooleanMsg AddExistingExpense(Expense expense)
+        public static BooleanMsg AddExistingExpense(string ExpenseId,string categoryId, int Amount, DateTime Time, string Notes)
         {
-            using (DbManager DbContext = new DbManager())
-            {
-                DbContext.Expenses.Add(expense);
-                DbContext.SaveChanges();
-                return true;
-            }
-        }
-
-        public static BooleanMsg CreateExpense(Category category, int Amount, DateTime Time, string Notes)
-        {
+            //Validation...
+            Category category = ReadCategory(categoryId).Value;
             if (category == null) return "Invalid Category";
             if (Amount <= 0) return "Amount Must be Greater Than Zero";
 
-            Expense expense = new Expense(category, Amount, Time, Notes);
+            Expense expense = new Expense(ExpenseId,categoryId,Amount,Time,Notes);
+            
+            //Adding it to SpendedAmount...
+            string s = category.CategoryName + "," + expense.ExpenseTime.ToShortDateString();
+            if (SpendedAmount.ContainsKey(s)) SpendedAmount[s] += expense.ExpenseAmount;
+            else SpendedAmount.Add(s, expense.ExpenseAmount);
+
+            ExpenseCreated?.Invoke(expense.ExpenseId);
+
+            return true;
+        }
+
+        public static BooleanMsg CreateExpense(string categoryId, int Amount, DateTime Time, string Notes)
+        {
+            //Validation....
+            Category category = ReadCategory(categoryId).Value;
+            if (category == null) return "Invalid Category";
+            if (Amount <= 0) return "Amount Must be Greater Than Zero";
+
+            //Creating New Expense And Add it to Db....
+            Expense expense = new Expense(category.CategoryId, Amount, Time, Notes);
             using (var DbContext = new DbManager())
             {
                 DbContext.Expenses.Add(expense);
                 DbContext.SaveChanges();
             }
+
+            //Adding into Spended Amount...
+            string s = category.CategoryName + "," +expense.ExpenseTime.ToShortDateString();
+            if (SpendedAmount.ContainsKey(s)) SpendedAmount[s] += expense.ExpenseAmount;
+            else SpendedAmount.Add(s, expense.ExpenseAmount);
+
             ExpenseCreated?.Invoke(expense.ExpenseId);
 
             return true;
@@ -82,19 +105,32 @@ namespace ExpenseManager.ManagerClasses
         {
             using (DbManager DbContext = new DbManager())
             {
+                //validation..
                 Expense expense = DbContext.Expenses.Find(ExpenseId);
                 if (expense == null) return "Invalid ExpenseId";
                 Category category = (ReadCategory(categoryId)).Value;
                 if (category == null) return "Invalid CategoryId";
                 if (amount <= 0) return "Amount Cannot Be Negative";
+
+                //Deducting the Amount From spends
+                string s = ReadCategory(expense.ExpenseCategoryId).Value.CategoryName + "," + expense.ExpenseTime.ToLongDateString();
+                SpendedAmount[s] -= expense.ExpenseAmount;
+
+                //Removing Old Expense...
                 DbContext.Expenses.Remove(expense);
                 DbContext.SaveChanges();
+
+                //Adding New Updated Expense..
                 expense.ExpenseCategoryId = categoryId;
                 expense.ExpenseAmount = amount;
                 expense.ExpenseTime = time;
                 expense.ExpenseNotes = notes;
                 DbContext.Expenses.Add(expense);
                 DbContext.SaveChanges();
+
+                //Adding the UpdatedAmount to spends...
+                s = category.CategoryName + "," + expense.ExpenseTime.ToLongDateString();
+                SpendedAmount[s] += expense.ExpenseAmount;
                 ExpenseUpdated?.Invoke(expense.ExpenseId);
                 return true;
 
@@ -109,6 +145,7 @@ namespace ExpenseManager.ManagerClasses
                 if (expense == null) return "Invalid Expense";
                 DbContext.Expenses.Remove(expense);
                 DbContext.SaveChanges();
+                SpendedAmount[ReadCategory(expense.ExpenseCategoryId).Value.CategoryName + "," + expense.ExpenseTime.ToShortDateString()] -= expense.ExpenseAmount;
                 ExpenseDeleted?.Invoke(expense.ExpenseId);
                 return true;
             }
@@ -202,6 +239,56 @@ namespace ExpenseManager.ManagerClasses
 
         #endregion
 
+       
+        public static bool CheckDbConfiguration()
+        {
+            string s = @".\LocalDb.xml";
+            if (!File.Exists(s))
+            {
+                XmlDocument LocalDb = new XmlDocument();
+
+                // Create a root element
+                XmlElement root = LocalDb.CreateElement("LocalDb");
+                LocalDb.AppendChild(root);
+
+                // Create child elements
+                XmlElement port = LocalDb.CreateElement("Port");
+                port.InnerText = "3306";
+                root.AppendChild(port);
+
+                XmlElement UId = LocalDb.CreateElement("UId");
+                UId.InnerText = "root";
+                root.AppendChild(UId);
+
+                XmlElement pwd = LocalDb.CreateElement("Password");
+                pwd.InnerText = "";
+                root.AppendChild(pwd);
+
+                LocalDb.Save(s);
+            }
+
+            try
+            {
+                DbManager dbManager = new DbManager();
+                dbManager.Database.EnsureCreated();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+        public static void UpdateDbConfiguration(string Port,string UId,string Password)
+        {
+            string filePath = @"./LocalDb.xml";
+            XmlDocument LocalDb = new XmlDocument();
+            LocalDb.Load(filePath);
+
+            LocalDb.GetElementsByTagName("Port").Item(0).InnerText = Port;
+            LocalDb.GetElementsByTagName("UId").Item(0).InnerText = UId;
+            LocalDb.GetElementsByTagName("Password").Item(0).InnerText=Password;
+            LocalDb.Save(filePath);
+        }
         public static DateTime FirstExpenseDate()
         {
             using (DbManager DbContext = new DbManager())
@@ -221,10 +308,6 @@ namespace ExpenseManager.ManagerClasses
                 expenses.Sort((ex1, ex2) => ex2.ExpenseTime.CompareTo(ex1.ExpenseTime));
                 return expenses[0].ExpenseTime;
             }
-        }
-        public static void MeasureStringHeight(string s,Font font)
-        {
-
         }
     }
 }

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.PictureBox BudgetPictureBox;
             System.Windows.Forms.PictureBox SortPictureBox;
             System.Windows.Forms.PictureBox CategoryPictureBox;
             System.Windows.Forms.PictureBox ExpensePictureBox;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BodyPanel = new System.Windows.Forms.Panel();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.ExpensePage = new System.Windows.Forms.TabPage();
@@ -54,11 +54,13 @@
             this.UpdateExpenseButton = new System.Windows.Forms.Button();
             this.CreateExpenseButton = new System.Windows.Forms.Button();
             this.CategoriesPage = new System.Windows.Forms.TabPage();
+            this.CategoryGrid = new System.Windows.Forms.DataGridView();
             this.AddCategoryPanel = new System.Windows.Forms.Panel();
+            this.CreateCategoryButton = new System.Windows.Forms.Button();
+            this.DeleteCategoryButton = new System.Windows.Forms.Button();
+            this.UpdateCategoryButton = new System.Windows.Forms.Button();
             this.SortPage = new System.Windows.Forms.TabPage();
-            this.SortGrid = new System.Windows.Forms.DataGridView();
             this.TimePickerLabel = new System.Windows.Forms.Panel();
-            this.RefreshButton = new System.Windows.Forms.Button();
             this.ToPicker = new System.Windows.Forms.DateTimePicker();
             this.ToLabel = new System.Windows.Forms.Label();
             this.FromPicker = new System.Windows.Forms.DateTimePicker();
@@ -80,28 +82,26 @@
             this.CategoriesLabel = new System.Windows.Forms.Label();
             this.ExpensePanel = new System.Windows.Forms.Panel();
             this.ExpenseLabel = new System.Windows.Forms.Label();
+            this.SortGrid = new System.Windows.Forms.DataGridView();
+            this.TotalPanel = new System.Windows.Forms.Panel();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.AmountLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.TopPictureBox = new System.Windows.Forms.PictureBox();
-            this.CategoryGrid = new System.Windows.Forms.DataGridView();
-            this.UpdateCategoryButton = new System.Windows.Forms.Button();
-            this.DeleteCategoryButton = new System.Windows.Forms.Button();
-            this.CreateCategoryButton = new System.Windows.Forms.Button();
             BudgetPictureBox = new System.Windows.Forms.PictureBox();
             SortPictureBox = new System.Windows.Forms.PictureBox();
             CategoryPictureBox = new System.Windows.Forms.PictureBox();
             ExpensePictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(BudgetPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(SortPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(CategoryPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(ExpensePictureBox)).BeginInit();
             this.BodyPanel.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.ExpensePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseGrid)).BeginInit();
             this.AddExpensPanel.SuspendLayout();
             this.CategoriesPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryGrid)).BeginInit();
             this.AddCategoryPanel.SuspendLayout();
             this.SortPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SortGrid)).BeginInit();
             this.TimePickerLabel.SuspendLayout();
             this.BudgetPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BudgetGrid)).BeginInit();
@@ -112,69 +112,14 @@
             this.SortPanel.SuspendLayout();
             this.CategoriesPanel.SuspendLayout();
             this.ExpensePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SortGrid)).BeginInit();
+            this.TotalPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(BudgetPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(SortPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(CategoryPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(ExpensePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BudgetPictureBox
-            // 
-            BudgetPictureBox.BackColor = System.Drawing.Color.Transparent;
-            BudgetPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            BudgetPictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_budget_25;
-            BudgetPictureBox.Location = new System.Drawing.Point(0, 0);
-            BudgetPictureBox.Name = "BudgetPictureBox";
-            BudgetPictureBox.Size = new System.Drawing.Size(54, 58);
-            BudgetPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            BudgetPictureBox.TabIndex = 3;
-            BudgetPictureBox.TabStop = false;
-            BudgetPictureBox.Click += new System.EventHandler(this.MouseClicked);
-            BudgetPictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
-            BudgetPictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
-            // 
-            // SortPictureBox
-            // 
-            SortPictureBox.BackColor = System.Drawing.Color.Transparent;
-            SortPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            SortPictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_filter_25;
-            SortPictureBox.Location = new System.Drawing.Point(0, 0);
-            SortPictureBox.Name = "SortPictureBox";
-            SortPictureBox.Size = new System.Drawing.Size(54, 58);
-            SortPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            SortPictureBox.TabIndex = 3;
-            SortPictureBox.TabStop = false;
-            SortPictureBox.Click += new System.EventHandler(this.MouseClicked);
-            SortPictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
-            SortPictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
-            // 
-            // CategoryPictureBox
-            // 
-            CategoryPictureBox.BackColor = System.Drawing.Color.Transparent;
-            CategoryPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            CategoryPictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_category_25;
-            CategoryPictureBox.Location = new System.Drawing.Point(0, 0);
-            CategoryPictureBox.Name = "CategoryPictureBox";
-            CategoryPictureBox.Size = new System.Drawing.Size(54, 58);
-            CategoryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            CategoryPictureBox.TabIndex = 3;
-            CategoryPictureBox.TabStop = false;
-            CategoryPictureBox.Click += new System.EventHandler(this.MouseClicked);
-            CategoryPictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
-            CategoryPictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
-            // 
-            // ExpensePictureBox
-            // 
-            ExpensePictureBox.BackColor = System.Drawing.Color.Transparent;
-            ExpensePictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            ExpensePictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_expense_48;
-            ExpensePictureBox.Location = new System.Drawing.Point(0, 0);
-            ExpensePictureBox.Name = "ExpensePictureBox";
-            ExpensePictureBox.Size = new System.Drawing.Size(54, 58);
-            ExpensePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            ExpensePictureBox.TabIndex = 3;
-            ExpensePictureBox.TabStop = false;
-            ExpensePictureBox.Click += new System.EventHandler(this.MouseClicked);
-            ExpensePictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
-            ExpensePictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
             // 
             // BodyPanel
             // 
@@ -190,9 +135,9 @@
             // 
             // TabControl
             // 
+            this.TabControl.Controls.Add(this.SortPage);
             this.TabControl.Controls.Add(this.ExpensePage);
             this.TabControl.Controls.Add(this.CategoriesPage);
-            this.TabControl.Controls.Add(this.SortPage);
             this.TabControl.Controls.Add(this.BudgetPage);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl.ItemSize = new System.Drawing.Size(0, 1);
@@ -219,48 +164,48 @@
             // 
             this.ExpenseGrid.AllowUserToAddRows = false;
             this.ExpenseGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ExpenseGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ExpenseGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ExpenseGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ExpenseGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ExpenseGrid.BackgroundColor = System.Drawing.SystemColors.Window;
             this.ExpenseGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ExpenseGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ExpenseGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExpenseGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ExpenseGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ExpenseGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExpenseGrid.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ExpenseGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.ExpenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ExpenseGrid.Location = new System.Drawing.Point(3, 44);
             this.ExpenseGrid.Name = "ExpenseGrid";
             this.ExpenseGrid.ReadOnly = true;
             this.ExpenseGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExpenseGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ExpenseGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.ExpenseGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ExpenseGrid.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ExpenseGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ExpenseGrid.Size = new System.Drawing.Size(630, 332);
             this.ExpenseGrid.TabIndex = 1;
             this.ExpenseGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExpenseGridCellClick);
@@ -332,6 +277,45 @@
             this.CategoriesPage.Text = "tabPage2";
             this.CategoriesPage.UseVisualStyleBackColor = true;
             // 
+            // CategoryGrid
+            // 
+            this.CategoryGrid.AllowUserToAddRows = false;
+            this.CategoryGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CategoryGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.CategoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CategoryGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.CategoryGrid.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.CategoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CategoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.CategoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.CategoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CategoryGrid.DefaultCellStyle = dataGridViewCellStyle11;
+            this.CategoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CategoryGrid.Location = new System.Drawing.Point(3, 43);
+            this.CategoryGrid.Name = "CategoryGrid";
+            this.CategoryGrid.ReadOnly = true;
+            this.CategoryGrid.RowHeadersVisible = false;
+            this.CategoryGrid.Size = new System.Drawing.Size(630, 333);
+            this.CategoryGrid.TabIndex = 2;
+            this.CategoryGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoryGridCellClick);
+            // 
             // AddCategoryPanel
             // 
             this.AddCategoryPanel.Controls.Add(this.CreateCategoryButton);
@@ -343,10 +327,53 @@
             this.AddCategoryPanel.Size = new System.Drawing.Size(630, 40);
             this.AddCategoryPanel.TabIndex = 1;
             // 
+            // CreateCategoryButton
+            // 
+            this.CreateCategoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(210)))), ((int)(((byte)(10)))));
+            this.CreateCategoryButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CreateCategoryButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateCategoryButton.ForeColor = System.Drawing.Color.White;
+            this.CreateCategoryButton.Location = new System.Drawing.Point(509, 0);
+            this.CreateCategoryButton.Name = "CreateCategoryButton";
+            this.CreateCategoryButton.Size = new System.Drawing.Size(121, 40);
+            this.CreateCategoryButton.TabIndex = 3;
+            this.CreateCategoryButton.Text = "CREATECATEGORY";
+            this.CreateCategoryButton.UseVisualStyleBackColor = false;
+            this.CreateCategoryButton.Click += new System.EventHandler(this.CreateCategoryButtonClick);
+            // 
+            // DeleteCategoryButton
+            // 
+            this.DeleteCategoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteCategoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
+            this.DeleteCategoryButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteCategoryButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteCategoryButton.Location = new System.Drawing.Point(135, 0);
+            this.DeleteCategoryButton.Name = "DeleteCategoryButton";
+            this.DeleteCategoryButton.Size = new System.Drawing.Size(121, 41);
+            this.DeleteCategoryButton.TabIndex = 2;
+            this.DeleteCategoryButton.Text = "DELETECATEGORY";
+            this.DeleteCategoryButton.UseVisualStyleBackColor = false;
+            this.DeleteCategoryButton.Click += new System.EventHandler(this.CategoryDeleteButtonClick);
+            // 
+            // UpdateCategoryButton
+            // 
+            this.UpdateCategoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateCategoryButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.UpdateCategoryButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateCategoryButton.ForeColor = System.Drawing.Color.White;
+            this.UpdateCategoryButton.Location = new System.Drawing.Point(322, 0);
+            this.UpdateCategoryButton.Name = "UpdateCategoryButton";
+            this.UpdateCategoryButton.Size = new System.Drawing.Size(121, 41);
+            this.UpdateCategoryButton.TabIndex = 1;
+            this.UpdateCategoryButton.Text = "UPDATECATEGORY";
+            this.UpdateCategoryButton.UseVisualStyleBackColor = false;
+            this.UpdateCategoryButton.Click += new System.EventHandler(this.CategoryUpdateButtonClick);
+            // 
             // SortPage
             // 
             this.SortPage.Controls.Add(this.SortGrid);
             this.SortPage.Controls.Add(this.TimePickerLabel);
+            this.SortPage.Controls.Add(this.TotalPanel);
             this.SortPage.Location = new System.Drawing.Point(4, 5);
             this.SortPage.Name = "SortPage";
             this.SortPage.Size = new System.Drawing.Size(636, 379);
@@ -354,46 +381,10 @@
             this.SortPage.Text = "tabPage3";
             this.SortPage.UseVisualStyleBackColor = true;
             // 
-            // SortGrid
-            // 
-            this.SortGrid.AllowUserToAddRows = false;
-            this.SortGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.SortGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
-            this.SortGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.SortGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.SortGrid.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.SortGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SortGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SortGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
-            this.SortGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle47.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SortGrid.DefaultCellStyle = dataGridViewCellStyle47;
-            this.SortGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SortGrid.Location = new System.Drawing.Point(0, 59);
-            this.SortGrid.Name = "SortGrid";
-            this.SortGrid.ReadOnly = true;
-            this.SortGrid.RowHeadersVisible = false;
-            this.SortGrid.Size = new System.Drawing.Size(636, 320);
-            this.SortGrid.TabIndex = 3;
-            // 
             // TimePickerLabel
             // 
             this.TimePickerLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TimePickerLabel.Controls.Add(this.button1);
             this.TimePickerLabel.Controls.Add(this.RefreshButton);
             this.TimePickerLabel.Controls.Add(this.ToPicker);
             this.TimePickerLabel.Controls.Add(this.ToLabel);
@@ -405,17 +396,6 @@
             this.TimePickerLabel.Name = "TimePickerLabel";
             this.TimePickerLabel.Size = new System.Drawing.Size(636, 59);
             this.TimePickerLabel.TabIndex = 0;
-            // 
-            // RefreshButton
-            // 
-            this.RefreshButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.RefreshButton.Image = global::ExpenseManager.Properties.Resources.icons8_refresh_25;
-            this.RefreshButton.Location = new System.Drawing.Point(458, 19);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(36, 30);
-            this.RefreshButton.TabIndex = 5;
-            this.RefreshButton.UseVisualStyleBackColor = false;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButtonClick);
             // 
             // ToPicker
             // 
@@ -486,23 +466,23 @@
             this.BudgetGrid.AllowUserToDeleteRows = false;
             this.BudgetGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BudgetGrid.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BudgetGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BudgetGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.BudgetGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.BudgetGrid.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.BudgetGrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.BudgetGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BudgetGrid.Location = new System.Drawing.Point(0, 27);
             this.BudgetGrid.Name = "BudgetGrid";
@@ -680,6 +660,154 @@
             this.ExpenseLabel.MouseEnter += new System.EventHandler(this.MouseEntering);
             this.ExpenseLabel.MouseLeave += new System.EventHandler(this.MouseLeaving);
             // 
+            // SortGrid
+            // 
+            this.SortGrid.AllowUserToAddRows = false;
+            this.SortGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.SortGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.SortGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.SortGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.SortGrid.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SortGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.SortGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SortGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.SortGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SortGrid.Location = new System.Drawing.Point(0, 59);
+            this.SortGrid.Name = "SortGrid";
+            this.SortGrid.ReadOnly = true;
+            this.SortGrid.RowHeadersVisible = false;
+            this.SortGrid.Size = new System.Drawing.Size(636, 289);
+            this.SortGrid.TabIndex = 4;
+            // 
+            // TotalPanel
+            // 
+            this.TotalPanel.Controls.Add(this.AmountLabel);
+            this.TotalPanel.Controls.Add(this.TotalLabel);
+            this.TotalPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TotalPanel.Location = new System.Drawing.Point(0, 348);
+            this.TotalPanel.Name = "TotalPanel";
+            this.TotalPanel.Size = new System.Drawing.Size(636, 31);
+            this.TotalPanel.TabIndex = 5;
+            // 
+            // TotalLabel
+            // 
+            this.TotalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLabel.Location = new System.Drawing.Point(0, 0);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(401, 28);
+            this.TotalLabel.TabIndex = 0;
+            this.TotalLabel.Text = "Total";
+            this.TotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // AmountLabel
+            // 
+            this.AmountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountLabel.Location = new System.Drawing.Point(407, 0);
+            this.AmountLabel.Name = "AmountLabel";
+            this.AmountLabel.Size = new System.Drawing.Size(229, 28);
+            this.AmountLabel.TabIndex = 1;
+            this.AmountLabel.Text = "0";
+            this.AmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(537, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.RefreshButton.Image = global::ExpenseManager.Properties.Resources.icons8_refresh_25;
+            this.RefreshButton.Location = new System.Drawing.Point(458, 19);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(36, 30);
+            this.RefreshButton.TabIndex = 5;
+            this.RefreshButton.UseVisualStyleBackColor = false;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButtonClick);
+            // 
+            // BudgetPictureBox
+            // 
+            BudgetPictureBox.BackColor = System.Drawing.Color.Transparent;
+            BudgetPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            BudgetPictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_budget_25;
+            BudgetPictureBox.Location = new System.Drawing.Point(0, 0);
+            BudgetPictureBox.Name = "BudgetPictureBox";
+            BudgetPictureBox.Size = new System.Drawing.Size(54, 58);
+            BudgetPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            BudgetPictureBox.TabIndex = 3;
+            BudgetPictureBox.TabStop = false;
+            BudgetPictureBox.Click += new System.EventHandler(this.MouseClicked);
+            BudgetPictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
+            BudgetPictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
+            // 
+            // SortPictureBox
+            // 
+            SortPictureBox.BackColor = System.Drawing.Color.Transparent;
+            SortPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            SortPictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_filter_25;
+            SortPictureBox.Location = new System.Drawing.Point(0, 0);
+            SortPictureBox.Name = "SortPictureBox";
+            SortPictureBox.Size = new System.Drawing.Size(54, 58);
+            SortPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            SortPictureBox.TabIndex = 3;
+            SortPictureBox.TabStop = false;
+            SortPictureBox.Click += new System.EventHandler(this.MouseClicked);
+            SortPictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
+            SortPictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
+            // 
+            // CategoryPictureBox
+            // 
+            CategoryPictureBox.BackColor = System.Drawing.Color.Transparent;
+            CategoryPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            CategoryPictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_category_25;
+            CategoryPictureBox.Location = new System.Drawing.Point(0, 0);
+            CategoryPictureBox.Name = "CategoryPictureBox";
+            CategoryPictureBox.Size = new System.Drawing.Size(54, 58);
+            CategoryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            CategoryPictureBox.TabIndex = 3;
+            CategoryPictureBox.TabStop = false;
+            CategoryPictureBox.Click += new System.EventHandler(this.MouseClicked);
+            CategoryPictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
+            CategoryPictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
+            // 
+            // ExpensePictureBox
+            // 
+            ExpensePictureBox.BackColor = System.Drawing.Color.Transparent;
+            ExpensePictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            ExpensePictureBox.Image = global::ExpenseManager.Properties.Resources.icons8_expense_48;
+            ExpensePictureBox.Location = new System.Drawing.Point(0, 0);
+            ExpensePictureBox.Name = "ExpensePictureBox";
+            ExpensePictureBox.Size = new System.Drawing.Size(54, 58);
+            ExpensePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            ExpensePictureBox.TabIndex = 3;
+            ExpensePictureBox.TabStop = false;
+            ExpensePictureBox.Click += new System.EventHandler(this.MouseClicked);
+            ExpensePictureBox.MouseEnter += new System.EventHandler(this.MouseEntering);
+            ExpensePictureBox.MouseLeave += new System.EventHandler(this.MouseLeaving);
+            // 
             // TopPictureBox
             // 
             this.TopPictureBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -692,87 +820,6 @@
             this.TopPictureBox.TabIndex = 3;
             this.TopPictureBox.TabStop = false;
             // 
-            // CategoryGrid
-            // 
-            this.CategoryGrid.AllowUserToAddRows = false;
-            this.CategoryGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.CategoryGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle50;
-            this.CategoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.CategoryGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.CategoryGrid.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.CategoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CategoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.CategoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle51;
-            this.CategoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle52.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CategoryGrid.DefaultCellStyle = dataGridViewCellStyle52;
-            this.CategoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CategoryGrid.Location = new System.Drawing.Point(3, 43);
-            this.CategoryGrid.Name = "CategoryGrid";
-            this.CategoryGrid.ReadOnly = true;
-            this.CategoryGrid.RowHeadersVisible = false;
-            this.CategoryGrid.Size = new System.Drawing.Size(630, 333);
-            this.CategoryGrid.TabIndex = 2;
-            this.CategoryGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoryGridCellClick);
-            // 
-            // UpdateCategoryButton
-            // 
-            this.UpdateCategoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateCategoryButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.UpdateCategoryButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateCategoryButton.ForeColor = System.Drawing.Color.White;
-            this.UpdateCategoryButton.Location = new System.Drawing.Point(322, 0);
-            this.UpdateCategoryButton.Name = "UpdateCategoryButton";
-            this.UpdateCategoryButton.Size = new System.Drawing.Size(121, 41);
-            this.UpdateCategoryButton.TabIndex = 1;
-            this.UpdateCategoryButton.Text = "UPDATECATEGORY";
-            this.UpdateCategoryButton.UseVisualStyleBackColor = false;
-            this.UpdateCategoryButton.Click += new System.EventHandler(this.CategoryUpdateButtonClick);
-            // 
-            // DeleteCategoryButton
-            // 
-            this.DeleteCategoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteCategoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
-            this.DeleteCategoryButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteCategoryButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteCategoryButton.Location = new System.Drawing.Point(135, 0);
-            this.DeleteCategoryButton.Name = "DeleteCategoryButton";
-            this.DeleteCategoryButton.Size = new System.Drawing.Size(121, 41);
-            this.DeleteCategoryButton.TabIndex = 2;
-            this.DeleteCategoryButton.Text = "DELETECATEGORY";
-            this.DeleteCategoryButton.UseVisualStyleBackColor = false;
-            this.DeleteCategoryButton.Click += new System.EventHandler(this.CategoryDeleteButtonClick);
-            // 
-            // CreateCategoryButton
-            // 
-            this.CreateCategoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(210)))), ((int)(((byte)(10)))));
-            this.CreateCategoryButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CreateCategoryButton.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateCategoryButton.ForeColor = System.Drawing.Color.White;
-            this.CreateCategoryButton.Location = new System.Drawing.Point(509, 0);
-            this.CreateCategoryButton.Name = "CreateCategoryButton";
-            this.CreateCategoryButton.Size = new System.Drawing.Size(121, 40);
-            this.CreateCategoryButton.TabIndex = 3;
-            this.CreateCategoryButton.Text = "CREATECATEGORY";
-            this.CreateCategoryButton.UseVisualStyleBackColor = false;
-            this.CreateCategoryButton.Click += new System.EventHandler(this.CreateCategoryButtonClick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,19 +829,15 @@
             this.Controls.Add(this.BodyPanel);
             this.Name = "MainForm";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(BudgetPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(SortPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(CategoryPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(ExpensePictureBox)).EndInit();
             this.BodyPanel.ResumeLayout(false);
             this.TabControl.ResumeLayout(false);
             this.ExpensePage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ExpenseGrid)).EndInit();
             this.AddExpensPanel.ResumeLayout(false);
             this.CategoriesPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryGrid)).EndInit();
             this.AddCategoryPanel.ResumeLayout(false);
             this.SortPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SortGrid)).EndInit();
             this.TimePickerLabel.ResumeLayout(false);
             this.BudgetPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BudgetGrid)).EndInit();
@@ -805,8 +848,13 @@
             this.SortPanel.ResumeLayout(false);
             this.CategoriesPanel.ResumeLayout(false);
             this.ExpensePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SortGrid)).EndInit();
+            this.TotalPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(BudgetPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(SortPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(CategoryPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(ExpensePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -822,7 +870,6 @@
         private System.Windows.Forms.TabPage CategoriesPage;
         private System.Windows.Forms.Panel AddCategoryPanel;
         private System.Windows.Forms.TabPage SortPage;
-        private System.Windows.Forms.DataGridView SortGrid;
         private System.Windows.Forms.Panel TimePickerLabel;
         private System.Windows.Forms.DateTimePicker ToPicker;
         private System.Windows.Forms.Label ToLabel;
@@ -853,6 +900,11 @@
         private System.Windows.Forms.Button DeleteCategoryButton;
         private System.Windows.Forms.Button UpdateCategoryButton;
         private System.Windows.Forms.Button CreateCategoryButton;
+        private System.Windows.Forms.DataGridView SortGrid;
+        private System.Windows.Forms.Panel TotalPanel;
+        private System.Windows.Forms.Label AmountLabel;
+        private System.Windows.Forms.Label TotalLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

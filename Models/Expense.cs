@@ -14,15 +14,23 @@ namespace ExpenseManager.Models
         public DateTime ExpenseTime { get; set; }
         public string ExpenseNotes { get; set; }
 
-        public Expense(Category expenseCategory, int expenseAmount, DateTime expenseTime, string expenseNotes)
+        public Expense(string categoryId, int expenseAmount, DateTime expenseTime, string expenseNotes)
         {
             ExpenseId = UniqueIdGenerator();
-            ExpenseCategoryId = expenseCategory.CategoryId;
+            ExpenseCategoryId = categoryId;
             ExpenseAmount = expenseAmount;
             ExpenseTime = expenseTime;
             ExpenseNotes = expenseNotes;
         }
 
+        public Expense(string Id,string categoryId, int expenseAmount, DateTime expenseTime, string expenseNotes)
+        {
+            ExpenseId = Id;
+            ExpenseCategoryId= categoryId;
+            ExpenseAmount = expenseAmount;
+            ExpenseTime = expenseTime;
+            ExpenseNotes = expenseNotes;
+        }
         public Expense()
         {
            // ExpenseId = UniqueIdGenerator();

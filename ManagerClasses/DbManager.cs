@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using ExpenseManager.Models;
+using System.Xml;
 
 namespace ExpenseManager.ManagerClasses
 {
@@ -17,7 +18,15 @@ namespace ExpenseManager.ManagerClasses
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            string connectionString="server=localhost;port=3306;uid=root;pwd=Suriya@123;database=expensedatabase";
+            string s = @"./LocalDb.xml";
+            XmlDocument LocalDb = new XmlDocument();
+            LocalDb.Load(s);
+
+            string port=LocalDb.GetElementsByTagName("Port").Item(0).InnerText;
+            string Uid = LocalDb.GetElementsByTagName("UId").Item(0).InnerText;
+            string pwd = LocalDb.GetElementsByTagName("Password").Item(0).InnerText;
+
+            string connectionString=$"server=localhost;port={port};uid={Uid};pwd={pwd};database=expensedatabase";
             optionsBuilder.UseMySql(connectionString);
         }
 
