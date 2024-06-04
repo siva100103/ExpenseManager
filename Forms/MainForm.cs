@@ -414,8 +414,6 @@ namespace ExpenseManager
         #endregion
 
         #region BudgetPage
-
-
         private void BudgetTableCreator()
         {
             BudgetDataTable.Columns.Add("Month", typeof(string));
@@ -463,7 +461,6 @@ namespace ExpenseManager
                 BooleanMsg res = ExpenseManagerClass.DeleteBudget(BudgetId);
                 if (res.Result)
                 {
-                    Close();
                     MessageBox.Show("Budget Deleted SuccessFully...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else
