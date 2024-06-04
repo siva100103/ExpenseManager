@@ -8,6 +8,20 @@ namespace ExpenseManager.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Budgets",
+                columns: table => new
+                {
+                    BudgetId = table.Column<string>(type: "varchar(36) CHARACTER SET utf8mb4", nullable: false),
+                    Amount = table.Column<int>(nullable: false),
+                    Month = table.Column<string>(nullable: true),
+                    Year = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Budgets", x => x.BudgetId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
@@ -37,6 +51,9 @@ namespace ExpenseManager.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Budgets");
+
             migrationBuilder.DropTable(
                 name: "Categories");
 

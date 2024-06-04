@@ -24,25 +24,29 @@ namespace ExpenseManager.UserControls
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            
+        }
+
+        public void SetControl()
+        {
             List<Category> categories = new List<Category>();
-            using(DbManager dbManager =new DbManager())
+            using (DbManager dbManager = new DbManager())
             {
                 categories = dbManager.Categories.ToList();
             }
 
-                foreach (var category in categories)
-                {
-                    CheckBox checkBox = new CheckBox();
-                    checkBox.Tag = category;
-                    checkBox.AutoSize = false;
-                    checkBox.Dock = DockStyle.Top;
-                    checkBox.Text = category.CategoryName;
-                    checkBox.Font = new Font("Microsoft Tai Le", 12, FontStyle.Regular);
-                    checkBox.CheckedChanged += CheckBoxCheckedChanged;
-                    CheckBoxPanel.Controls.Add(checkBox);
-                }    
+            foreach (var category in categories)
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Tag = category;
+                checkBox.AutoSize = false;
+                checkBox.Dock = DockStyle.Top;
+                checkBox.Text = category.CategoryName;
+                checkBox.Font = new Font("Microsoft Tai Le", 12, FontStyle.Regular);
+                checkBox.CheckedChanged += CheckBoxCheckedChanged;
+                CheckBoxPanel.Controls.Add(checkBox);
+            }
         }
-
         private void CheckBoxCheckedChanged(object sender, EventArgs e)
         {
             CheckBox checkBox = sender as CheckBox;
@@ -59,7 +63,7 @@ namespace ExpenseManager.UserControls
 
         private void CloseButtonClick(object sender, EventArgs e)
         {
-            Dispose();
+            Visible = false;
         }
     }
 }

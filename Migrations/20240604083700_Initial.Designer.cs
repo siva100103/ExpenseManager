@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExpenseManager.Migrations
 {
     [DbContext(typeof(DbManager))]
-    [Migration("20240601063219_Initial")]
+    [Migration("20240604083700_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,13 +19,32 @@ namespace ExpenseManager.Migrations
                 .HasAnnotation("ProductVersion", "3.1.32")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("ExpenseManager.Models.Budget", b =>
+                {
+                    b.Property<string>("BudgetId")
+                        .HasColumnType("varchar(36) CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Month")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Year")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("BudgetId");
+
+                    b.ToTable("Budgets");
+                });
+
             modelBuilder.Entity("ExpenseManager.Models.Category", b =>
                 {
                     b.Property<string>("CategoryId")
                         .HasColumnType("varchar(36) CHARACTER SET utf8mb4");
 
                     b.Property<string>("CategoryName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("CategoryId");
 
@@ -41,13 +60,13 @@ namespace ExpenseManager.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ExpenseCategoryId")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("ExpenseNotes")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("ExpenseTime")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("ExpenseId");
 

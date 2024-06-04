@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.ClosePanel = new System.Windows.Forms.Panel();
-            this.CheckBoxPanel = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.CheckBoxPanel = new System.Windows.Forms.Panel();
             this.ClosePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,14 +43,6 @@
             this.ClosePanel.Size = new System.Drawing.Size(169, 27);
             this.ClosePanel.TabIndex = 0;
             // 
-            // CheckBoxPanel
-            // 
-            this.CheckBoxPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CheckBoxPanel.Location = new System.Drawing.Point(10, 37);
-            this.CheckBoxPanel.Name = "CheckBoxPanel";
-            this.CheckBoxPanel.Size = new System.Drawing.Size(169, 118);
-            this.CheckBoxPanel.TabIndex = 1;
-            // 
             // CloseButton
             // 
             this.CloseButton.Dock = System.Windows.Forms.DockStyle.Right;
@@ -61,6 +53,15 @@
             this.CloseButton.TabIndex = 0;
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButtonClick);
+            // 
+            // CheckBoxPanel
+            // 
+            this.CheckBoxPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CheckBoxPanel.Location = new System.Drawing.Point(10, 37);
+            this.CheckBoxPanel.Name = "CheckBoxPanel";
+            this.CheckBoxPanel.Size = new System.Drawing.Size(169, 118);
+            this.CheckBoxPanel.TabIndex = 1;
+            this.CheckBoxPanel.Visible = false;
             // 
             // CategorySelector
             // 

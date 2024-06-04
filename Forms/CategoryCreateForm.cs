@@ -28,9 +28,9 @@ namespace ExpenseManager.Forms
             if (res.Result)
             {
                 Close();
-                MessageBox.Show("CategoryAdded Successfully...!!!");
+                MessageBox.Show("CategoryAdded Successfully...!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            else MessageBox.Show(res.Message);
+            else MessageBox.Show(res.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
     }
 }

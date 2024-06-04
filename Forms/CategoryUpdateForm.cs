@@ -31,11 +31,11 @@ namespace ExpenseManager.Forms
             if (res.Result)
             {
                 Close();
-                MessageBox.Show("Category Updated Successfully...!!!");
+                MessageBox.Show("Category Updated Successfully...!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
-                MessageBox.Show(res.Message);
+                MessageBox.Show(res.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

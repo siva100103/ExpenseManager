@@ -18,7 +18,7 @@ namespace ExpenseManager.Forms
         public ExpenseCreateForm()
         {
             InitializeComponent();
-            List<Category> categories=ExpenseManagerClass.GetAllCategories().Values.ToList();
+            List<Category> categories=ExpenseManagerClass.ReadAllCategories().Values.ToList();
             categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
             CategoryBox.DataSource = categories;
             CategoryBox.DisplayMember = "CategoryName";
@@ -35,8 +35,8 @@ namespace ExpenseManager.Forms
             BooleanMsg res=ExpenseManagerClass.CreateExpense(category.CategoryId, amount, time, notes);
             if (res.Result)
             {
+                MessageBox.Show("Expense Added Succesfully...!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Close();
-                MessageBox.Show("Expense Added Succesfully...!!!");
             }
             else
             {

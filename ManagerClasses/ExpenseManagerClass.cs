@@ -24,21 +24,26 @@ namespace ExpenseManager.ManagerClasses
         public static event Informer CategoryUpdated;
         public static event Informer CategoryDeleted;
 
+        public static event Informer BudgetCreated;
+        public static event Informer BudgetUpdated;
+        public static event Informer BudgetDeleted;
+
+        public static event Informer LimitExeceded;
         public static Dictionary<string, double> SpendedAmount = new Dictionary<string, double>();
 
         #region Expense
 
-        public static BooleanMsg AddExistingExpense(string ExpenseId,string categoryId, int Amount, DateTime Time, string Notes)
+        public static BooleanMsg AddExistingExpense(string ExpenseId, string categoryId, int Amount, DateTime Time, string Notes)
         {
             //Validation...
             Category category = ReadCategory(categoryId).Value;
             if (category == null) return "Invalid Category";
             if (Amount <= 0) return "Amount Must be Greater Than Zero";
 
-            Expense expense = new Expense(ExpenseId,categoryId,Amount,Time,Notes);
-            
+            Expense expense = new Expense(ExpenseId, categoryId, Amount, Time, Notes);
+
             //Adding it to SpendedAmount...
-            string s = category.CategoryName + "," + expense.ExpenseTime.ToShortDateString();
+            string s = GetMonth(expense.ExpenseTime.Month) + "," + expense.ExpenseTime.Year;
             if (SpendedAmount.ContainsKey(s)) SpendedAmount[s] += expense.ExpenseAmount;
             else SpendedAmount.Add(s, expense.ExpenseAmount);
 
@@ -46,7 +51,11 @@ namespace ExpenseManager.ManagerClasses
 
             return true;
         }
-
+        private static string GetMonth(int month)
+        {
+            string[] arr = new string[] { "January", "Feburary", "March", "April", "May", "June", "July", "Auguest", "Septmber", "October", "November", "December" };
+            return arr[month - 1];
+        }
         public static BooleanMsg CreateExpense(string categoryId, int Amount, DateTime Time, string Notes)
         {
             //Validation....
@@ -63,13 +72,24 @@ namespace ExpenseManager.ManagerClasses
             }
 
             //Adding into Spended Amount...
-            string s = category.CategoryName + "," +expense.ExpenseTime.ToShortDateString();
-            if (SpendedAmount.ContainsKey(s)) SpendedAmount[s] += expense.ExpenseAmount;
-            else SpendedAmount.Add(s, expense.ExpenseAmount);
 
+            string s = GetMonth(expense.ExpenseTime.Month) + "," + expense.ExpenseTime.Year;
+            
+            if (SpendedAmount.ContainsKey(s)) SpendedAmount[s] += expense.ExpenseAmount;
+            else SpendedAmount[s] = expense.ExpenseAmount;
+
+            BudgetCheck(s);
             ExpenseCreated?.Invoke(expense.ExpenseId);
 
             return true;
+        }
+        private static void BudgetCheck(string s)
+        {
+            var budget = ReadAllBudgets();
+            if(budget.ContainsKey(s) && budget[s].Amount <= SpendedAmount[s])
+            {
+                LimitExeceded?.Invoke(s);
+            }
         }
 
         public static BooleanMsg<Expense> ReadExpense(string Id)
@@ -95,9 +115,9 @@ namespace ExpenseManager.ManagerClasses
 
         public static Dictionary<string, Expense> ReadAllExpenses()
         {
-            using (DbManager DbContext = new DbManager())
+            using (DbManager dbManager = new DbManager())
             {
-                return DbContext.Expenses.ToDictionary(exp => exp.ExpenseId);
+                return dbManager.Expenses.OrderByDescending(exp => exp.ExpenseTime).ToDictionary((exp)=>exp.ExpenseId);
             }
         }
 
@@ -113,24 +133,20 @@ namespace ExpenseManager.ManagerClasses
                 if (amount <= 0) return "Amount Cannot Be Negative";
 
                 //Deducting the Amount From spends
-                string s = ReadCategory(expense.ExpenseCategoryId).Value.CategoryName + "," + expense.ExpenseTime.ToLongDateString();
+                string s = GetMonth(expense.ExpenseTime.Month) + "," + expense.ExpenseTime.Year;
                 SpendedAmount[s] -= expense.ExpenseAmount;
 
-                //Removing Old Expense...
-                DbContext.Expenses.Remove(expense);
-                DbContext.SaveChanges();
-
-                //Adding New Updated Expense..
+                //Updating Expense..
                 expense.ExpenseCategoryId = categoryId;
                 expense.ExpenseAmount = amount;
                 expense.ExpenseTime = time;
                 expense.ExpenseNotes = notes;
-                DbContext.Expenses.Add(expense);
                 DbContext.SaveChanges();
-
+                
                 //Adding the UpdatedAmount to spends...
-                s = category.CategoryName + "," + expense.ExpenseTime.ToLongDateString();
+                s = GetMonth(expense.ExpenseTime.Month) + "," + expense.ExpenseTime.Year;
                 SpendedAmount[s] += expense.ExpenseAmount;
+                BudgetCheck(s);
                 ExpenseUpdated?.Invoke(expense.ExpenseId);
                 return true;
 
@@ -145,7 +161,8 @@ namespace ExpenseManager.ManagerClasses
                 if (expense == null) return "Invalid Expense";
                 DbContext.Expenses.Remove(expense);
                 DbContext.SaveChanges();
-                SpendedAmount[ReadCategory(expense.ExpenseCategoryId).Value.CategoryName + "," + expense.ExpenseTime.ToShortDateString()] -= expense.ExpenseAmount;
+                string s = GetMonth(expense.ExpenseTime.Month) + "," + expense.ExpenseTime.Year;
+                SpendedAmount[s] -= expense.ExpenseAmount;
                 ExpenseDeleted?.Invoke(expense.ExpenseId);
                 return true;
             }
@@ -188,13 +205,7 @@ namespace ExpenseManager.ManagerClasses
                 if (category == null) return "Invalid Category";
                 Category IsExist = DbContext.Categories.ToList().Find((cat) => cat.CategoryName.Equals(name));
                 if (IsExist != null) return "CategoryAlready Exists";
-                DbContext.Categories.Remove(category);
-                DbContext.SaveChanges();
-
-               
-
                 category.CategoryName = name;
-                DbContext.Categories.Add(category);
                 DbContext.SaveChanges();
                 CategoryUpdated?.Invoke(Id);
                 return true;
@@ -229,17 +240,76 @@ namespace ExpenseManager.ManagerClasses
             }
         }
 
-        public static Dictionary<string, Category> GetAllCategories()
+        public static Dictionary<string, Category> ReadAllCategories()
         {
             using (DbManager DbContext = new DbManager())
             {
-                return DbContext.Categories.ToDictionary(cat => cat.CategoryId);
+                return DbContext.Categories.OrderBy(cat=>cat.CategoryName).ToDictionary(cat => cat.CategoryId);
             }
         }
 
         #endregion
 
-       
+
+        #region Budgets
+        public static BooleanMsg CreateBudget(string month, string year, int amount)
+        {
+            string s = month + "," + year;
+            Budget budget = ReadBudget(s).Value;
+            if (budget != null) return "Budget Already Exists";
+            budget = new Budget(month, year, amount);
+            using (DbManager dbManager = new DbManager())
+            {
+                dbManager.Add(budget);
+                dbManager.SaveChanges();
+                BudgetCreated?.Invoke(s);
+                return true;
+            }
+        }
+        public static BooleanMsg<Budget> ReadBudget(string budgetId)
+        {
+            using (DbManager dbManager = new DbManager())
+            {
+
+                Budget budget = dbManager.Budgets.Find(budgetId);
+                if (budget == null) return "Invalid Budget";
+                return budget;
+            }
+        }
+        public static Dictionary<string,Budget> ReadAllBudgets()
+        {
+            using(DbManager dbManager=new DbManager())
+            {
+                return dbManager.Budgets.ToDictionary(budget=>budget.BudgetId);
+            }
+        }
+        public static BooleanMsg UpdateBudget(string month,string year,int amount)
+        {
+            string Id=month+","+year;
+            using(DbManager dbManager = new DbManager())
+            {
+                Budget budget=dbManager.Budgets.Find(Id);
+                if (budget == null) return "Invalid Budget";
+                budget.Amount = amount;
+                dbManager.SaveChanges();
+                BudgetUpdated?.Invoke(Id);
+                return true;
+            }
+        }        
+        public static BooleanMsg DeleteBudget(string BudgetId)
+        {
+            using(DbManager dbManager=new DbManager())
+            {
+                Budget budget=dbManager.Budgets.Find(BudgetId);
+                if (budget == null) return "Invalid Budget";
+                dbManager.Budgets.Remove(budget);
+                dbManager.SaveChanges();
+                BudgetDeleted?.Invoke(BudgetId);
+                return true;
+            }
+        }
+
+        #endregion
         public static bool CheckDbConfiguration()
         {
             string s = @".\LocalDb.xml";
@@ -273,12 +343,12 @@ namespace ExpenseManager.ManagerClasses
                 dbManager.Database.EnsureCreated();
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
         }
-        public static void UpdateDbConfiguration(string Port,string UId,string Password)
+        public static void UpdateDbConfiguration(string Port, string UId, string Password)
         {
             string filePath = @"./LocalDb.xml";
             XmlDocument LocalDb = new XmlDocument();
@@ -286,7 +356,7 @@ namespace ExpenseManager.ManagerClasses
 
             LocalDb.GetElementsByTagName("Port").Item(0).InnerText = Port;
             LocalDb.GetElementsByTagName("UId").Item(0).InnerText = UId;
-            LocalDb.GetElementsByTagName("Password").Item(0).InnerText=Password;
+            LocalDb.GetElementsByTagName("Password").Item(0).InnerText = Password;
             LocalDb.Save(filePath);
         }
         public static DateTime FirstExpenseDate()

@@ -187,6 +187,12 @@
     <Compile Include="Forms\BudgetSetForm.Designer.cs">
       <DependentUpon>BudgetSetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BudgetUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BudgetUpdateForm.Designer.cs">
+      <DependentUpon>BudgetUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CategoryCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,12 +231,13 @@
     </Compile>
     <Compile Include="ManagerClasses\DbManager.cs" />
     <Compile Include="ManagerClasses\ExpenseManagerClass.cs" />
-    <Compile Include="Migrations\20240601063219_Initial.cs" />
-    <Compile Include="Migrations\20240601063219_Initial.Designer.cs">
-      <DependentUpon>20240601063219_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20240604083700_Initial.cs" />
+    <Compile Include="Migrations\20240604083700_Initial.Designer.cs">
+      <DependentUpon>20240604083700_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DbManagerModelSnapshot.cs" />
     <Compile Include="Models\BooleanMsg.cs" />
+    <Compile Include="Models\Budget.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Expense.cs" />
     <Compile Include="Program.cs" />
@@ -243,6 +250,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\BudgetSetForm.resx">
       <DependentUpon>BudgetSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BudgetUpdateForm.resx">
+      <DependentUpon>BudgetUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CategoryCreateForm.resx">
       <DependentUpon>CategoryCreateForm.cs</DependentUpon>
@@ -325,6 +335,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-close-15.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

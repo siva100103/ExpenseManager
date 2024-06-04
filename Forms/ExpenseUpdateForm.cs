@@ -27,7 +27,7 @@ namespace ExpenseManager.Forms
 
         private void ValueSetter()
         {
-            List<Category> categories= ExpenseManagerClass.GetAllCategories().Values.ToList();
+            List<Category> categories= ExpenseManagerClass.ReadAllCategories().Values.ToList();
             categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
             CategoryBox.DataSource = categories;
             CategoryBox.DisplayMember = "CategoryName";
@@ -54,11 +54,11 @@ namespace ExpenseManager.Forms
             if (res.Result)
             {
                 Close();
-                MessageBox.Show("Expense Updated Successfully");
+                MessageBox.Show("Expense Updated Successfully....", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
-                MessageBox.Show(res.Message);
+                MessageBox.Show(res.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }
