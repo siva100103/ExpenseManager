@@ -60,7 +60,7 @@
             MainPanel.Location = new System.Drawing.Point(0, 0);
             MainPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new System.Drawing.Size(457, 437);
+            MainPanel.Size = new System.Drawing.Size(431, 429);
             MainPanel.TabIndex = 2;
             // 
             // ColorPanel
@@ -70,13 +70,13 @@
             ColorPanel.Location = new System.Drawing.Point(0, 0);
             ColorPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ColorPanel.Name = "ColorPanel";
-            ColorPanel.Size = new System.Drawing.Size(457, 69);
+            ColorPanel.Size = new System.Drawing.Size(431, 69);
             ColorPanel.TabIndex = 9;
             // 
             // UpdateButton
             // 
             UpdateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            UpdateButton.Location = new System.Drawing.Point(178, 366);
+            UpdateButton.Location = new System.Drawing.Point(159, 352);
             UpdateButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             UpdateButton.Name = "UpdateButton";
             UpdateButton.Size = new System.Drawing.Size(102, 39);
@@ -170,7 +170,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(457, 437);
+            ClientSize = new System.Drawing.Size(431, 429);
             Controls.Add(MainPanel);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "ExpenseUpdateForm";

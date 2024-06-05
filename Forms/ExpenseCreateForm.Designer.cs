@@ -28,157 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.ColorPanel = new System.Windows.Forms.Panel();
-            this.CreateButton = new System.Windows.Forms.Button();
-            this.NotesTextBox = new System.Windows.Forms.RichTextBox();
-            this.NotesLabel = new System.Windows.Forms.Label();
-            this.DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.TimeLabel = new System.Windows.Forms.Label();
-            this.AmountSelector = new System.Windows.Forms.NumericUpDown();
-            this.AmountLabel = new System.Windows.Forms.Label();
-            this.CategoryBox = new System.Windows.Forms.ComboBox();
-            this.CategoryLabel = new System.Windows.Forms.Label();
-            this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AmountSelector)).BeginInit();
-            this.SuspendLayout();
+            MainPanel = new System.Windows.Forms.Panel();
+            ColorPanel = new System.Windows.Forms.Panel();
+            CreateButton = new System.Windows.Forms.Button();
+            NotesTextBox = new System.Windows.Forms.RichTextBox();
+            NotesLabel = new System.Windows.Forms.Label();
+            DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            TimeLabel = new System.Windows.Forms.Label();
+            AmountSelector = new System.Windows.Forms.NumericUpDown();
+            AmountLabel = new System.Windows.Forms.Label();
+            CategoryBox = new System.Windows.Forms.ComboBox();
+            CategoryLabel = new System.Windows.Forms.Label();
+            MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AmountSelector).BeginInit();
+            SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.ColorPanel);
-            this.MainPanel.Controls.Add(this.CreateButton);
-            this.MainPanel.Controls.Add(this.NotesTextBox);
-            this.MainPanel.Controls.Add(this.NotesLabel);
-            this.MainPanel.Controls.Add(this.DateTimePicker);
-            this.MainPanel.Controls.Add(this.TimeLabel);
-            this.MainPanel.Controls.Add(this.AmountSelector);
-            this.MainPanel.Controls.Add(this.AmountLabel);
-            this.MainPanel.Controls.Add(this.CategoryBox);
-            this.MainPanel.Controls.Add(this.CategoryLabel);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(375, 379);
-            this.MainPanel.TabIndex = 1;
+            MainPanel.BackColor = System.Drawing.Color.White;
+            MainPanel.Controls.Add(ColorPanel);
+            MainPanel.Controls.Add(CreateButton);
+            MainPanel.Controls.Add(NotesTextBox);
+            MainPanel.Controls.Add(NotesLabel);
+            MainPanel.Controls.Add(DateTimePicker);
+            MainPanel.Controls.Add(TimeLabel);
+            MainPanel.Controls.Add(AmountSelector);
+            MainPanel.Controls.Add(AmountLabel);
+            MainPanel.Controls.Add(CategoryBox);
+            MainPanel.Controls.Add(CategoryLabel);
+            MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainPanel.Location = new System.Drawing.Point(0, 0);
+            MainPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new System.Drawing.Size(438, 437);
+            MainPanel.TabIndex = 1;
             // 
             // ColorPanel
             // 
-            this.ColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ColorPanel.Location = new System.Drawing.Point(0, 0);
-            this.ColorPanel.Name = "ColorPanel";
-            this.ColorPanel.Size = new System.Drawing.Size(375, 60);
-            this.ColorPanel.TabIndex = 9;
+            ColorPanel.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            ColorPanel.Location = new System.Drawing.Point(0, 0);
+            ColorPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ColorPanel.Name = "ColorPanel";
+            ColorPanel.Size = new System.Drawing.Size(438, 69);
+            ColorPanel.TabIndex = 9;
             // 
             // CreateButton
             // 
-            this.CreateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateButton.Location = new System.Drawing.Point(153, 317);
-            this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(87, 34);
-            this.CreateButton.TabIndex = 8;
-            this.CreateButton.Text = "Create";
-            this.CreateButton.UseVisualStyleBackColor = true;
-            this.CreateButton.Click += new System.EventHandler(this.CreateButtonClick);
+            CreateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            CreateButton.Location = new System.Drawing.Point(159, 347);
+            CreateButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CreateButton.Name = "CreateButton";
+            CreateButton.Size = new System.Drawing.Size(102, 39);
+            CreateButton.TabIndex = 8;
+            CreateButton.Text = "Create";
+            CreateButton.UseVisualStyleBackColor = true;
+            CreateButton.Click += CreateButtonClick;
             // 
             // NotesTextBox
             // 
-            this.NotesTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesTextBox.Location = new System.Drawing.Point(136, 235);
-            this.NotesTextBox.Name = "NotesTextBox";
-            this.NotesTextBox.Size = new System.Drawing.Size(179, 29);
-            this.NotesTextBox.TabIndex = 7;
-            this.NotesTextBox.Text = "";
+            NotesTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            NotesTextBox.Location = new System.Drawing.Point(159, 271);
+            NotesTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            NotesTextBox.Name = "NotesTextBox";
+            NotesTextBox.Size = new System.Drawing.Size(208, 33);
+            NotesTextBox.TabIndex = 7;
+            NotesTextBox.Text = "";
             // 
             // NotesLabel
             // 
-            this.NotesLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotesLabel.Location = new System.Drawing.Point(25, 235);
-            this.NotesLabel.Name = "NotesLabel";
-            this.NotesLabel.Size = new System.Drawing.Size(75, 29);
-            this.NotesLabel.TabIndex = 6;
-            this.NotesLabel.Text = "Notes:";
+            NotesLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            NotesLabel.Location = new System.Drawing.Point(29, 271);
+            NotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            NotesLabel.Name = "NotesLabel";
+            NotesLabel.Size = new System.Drawing.Size(88, 33);
+            NotesLabel.TabIndex = 6;
+            NotesLabel.Text = "Notes:";
             // 
             // DateTimePicker
             // 
-            this.DateTimePicker.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTimePicker.Location = new System.Drawing.Point(136, 186);
-            this.DateTimePicker.Name = "DateTimePicker";
-            this.DateTimePicker.Size = new System.Drawing.Size(179, 24);
-            this.DateTimePicker.TabIndex = 5;
+            DateTimePicker.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            DateTimePicker.Location = new System.Drawing.Point(159, 215);
+            DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            DateTimePicker.Name = "DateTimePicker";
+            DateTimePicker.Size = new System.Drawing.Size(208, 24);
+            DateTimePicker.TabIndex = 5;
             // 
             // TimeLabel
             // 
-            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLabel.Location = new System.Drawing.Point(25, 186);
-            this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(86, 29);
-            this.TimeLabel.TabIndex = 4;
-            this.TimeLabel.Text = "Time:";
+            TimeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            TimeLabel.Location = new System.Drawing.Point(29, 215);
+            TimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            TimeLabel.Name = "TimeLabel";
+            TimeLabel.Size = new System.Drawing.Size(100, 33);
+            TimeLabel.TabIndex = 4;
+            TimeLabel.Text = "Time:";
             // 
             // AmountSelector
             // 
-            this.AmountSelector.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountSelector.Location = new System.Drawing.Point(136, 139);
-            this.AmountSelector.Maximum = new decimal(new int[] {
-            300000,
-            0,
-            0,
-            0});
-            this.AmountSelector.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.AmountSelector.Name = "AmountSelector";
-            this.AmountSelector.Size = new System.Drawing.Size(179, 24);
-            this.AmountSelector.TabIndex = 3;
-            this.AmountSelector.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            AmountSelector.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            AmountSelector.Location = new System.Drawing.Point(159, 160);
+            AmountSelector.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            AmountSelector.Maximum = new decimal(new int[] { 300000, 0, 0, 0 });
+            AmountSelector.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            AmountSelector.Name = "AmountSelector";
+            AmountSelector.Size = new System.Drawing.Size(209, 24);
+            AmountSelector.TabIndex = 3;
+            AmountSelector.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // AmountLabel
             // 
-            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountLabel.Location = new System.Drawing.Point(25, 139);
-            this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(86, 29);
-            this.AmountLabel.TabIndex = 2;
-            this.AmountLabel.Text = "Amount:";
+            AmountLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AmountLabel.Location = new System.Drawing.Point(29, 160);
+            AmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            AmountLabel.Name = "AmountLabel";
+            AmountLabel.Size = new System.Drawing.Size(100, 33);
+            AmountLabel.TabIndex = 2;
+            AmountLabel.Text = "Amount:";
             // 
             // CategoryBox
             // 
-            this.CategoryBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryBox.FormattingEnabled = true;
-            this.CategoryBox.Location = new System.Drawing.Point(136, 81);
-            this.CategoryBox.Name = "CategoryBox";
-            this.CategoryBox.Size = new System.Drawing.Size(179, 24);
-            this.CategoryBox.TabIndex = 1;
+            CategoryBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            CategoryBox.FormattingEnabled = true;
+            CategoryBox.Location = new System.Drawing.Point(159, 93);
+            CategoryBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CategoryBox.Name = "CategoryBox";
+            CategoryBox.Size = new System.Drawing.Size(208, 24);
+            CategoryBox.TabIndex = 1;
             // 
             // CategoryLabel
             // 
-            this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryLabel.Location = new System.Drawing.Point(25, 81);
-            this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(86, 29);
-            this.CategoryLabel.TabIndex = 0;
-            this.CategoryLabel.Text = "Category:";
+            CategoryLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            CategoryLabel.Location = new System.Drawing.Point(29, 93);
+            CategoryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            CategoryLabel.Name = "CategoryLabel";
+            CategoryLabel.Size = new System.Drawing.Size(100, 33);
+            CategoryLabel.TabIndex = 0;
+            CategoryLabel.Text = "Category:";
             // 
             // ExpenseCreateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 379);
-            this.Controls.Add(this.MainPanel);
-            this.Name = "ExpenseCreateForm";
-            this.Text = "ExpenseAddForm";
-            this.MainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AmountSelector)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(438, 437);
+            Controls.Add(MainPanel);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "ExpenseCreateForm";
+            Text = "ExpenseAddForm";
+            MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)AmountSelector).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

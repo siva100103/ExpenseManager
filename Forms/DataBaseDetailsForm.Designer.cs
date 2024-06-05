@@ -28,137 +28,143 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.PortNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.UidTextBox = new System.Windows.Forms.TextBox();
-            this.SubmitButton = new System.Windows.Forms.Button();
-            this.ColorPanel = new System.Windows.Forms.Panel();
-            this.CreateButton = new System.Windows.Forms.Button();
-            this.PasswordLabel = new System.Windows.Forms.Label();
-            this.UIdLabel = new System.Windows.Forms.Label();
-            this.PortLabel = new System.Windows.Forms.Label();
-            this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PortNumericUpDown)).BeginInit();
-            this.SuspendLayout();
+            MainPanel = new System.Windows.Forms.Panel();
+            PortNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            PasswordTextBox = new System.Windows.Forms.TextBox();
+            UidTextBox = new System.Windows.Forms.TextBox();
+            SubmitButton = new System.Windows.Forms.Button();
+            ColorPanel = new System.Windows.Forms.Panel();
+            CreateButton = new System.Windows.Forms.Button();
+            PasswordLabel = new System.Windows.Forms.Label();
+            UIdLabel = new System.Windows.Forms.Label();
+            PortLabel = new System.Windows.Forms.Label();
+            MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PortNumericUpDown).BeginInit();
+            SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.PortNumericUpDown);
-            this.MainPanel.Controls.Add(this.PasswordTextBox);
-            this.MainPanel.Controls.Add(this.UidTextBox);
-            this.MainPanel.Controls.Add(this.SubmitButton);
-            this.MainPanel.Controls.Add(this.ColorPanel);
-            this.MainPanel.Controls.Add(this.CreateButton);
-            this.MainPanel.Controls.Add(this.PasswordLabel);
-            this.MainPanel.Controls.Add(this.UIdLabel);
-            this.MainPanel.Controls.Add(this.PortLabel);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(358, 315);
-            this.MainPanel.TabIndex = 2;
+            MainPanel.BackColor = System.Drawing.Color.White;
+            MainPanel.Controls.Add(PortNumericUpDown);
+            MainPanel.Controls.Add(PasswordTextBox);
+            MainPanel.Controls.Add(UidTextBox);
+            MainPanel.Controls.Add(SubmitButton);
+            MainPanel.Controls.Add(ColorPanel);
+            MainPanel.Controls.Add(CreateButton);
+            MainPanel.Controls.Add(PasswordLabel);
+            MainPanel.Controls.Add(UIdLabel);
+            MainPanel.Controls.Add(PortLabel);
+            MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainPanel.Location = new System.Drawing.Point(0, 0);
+            MainPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new System.Drawing.Size(418, 363);
+            MainPanel.TabIndex = 2;
             // 
             // PortNumericUpDown
             // 
-            this.PortNumericUpDown.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PortNumericUpDown.Location = new System.Drawing.Point(129, 81);
-            this.PortNumericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.PortNumericUpDown.Name = "PortNumericUpDown";
-            this.PortNumericUpDown.Size = new System.Drawing.Size(165, 24);
-            this.PortNumericUpDown.TabIndex = 14;
+            PortNumericUpDown.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PortNumericUpDown.Location = new System.Drawing.Point(150, 93);
+            PortNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            PortNumericUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            PortNumericUpDown.Name = "PortNumericUpDown";
+            PortNumericUpDown.Size = new System.Drawing.Size(192, 24);
+            PortNumericUpDown.TabIndex = 14;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(129, 181);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(165, 24);
-            this.PasswordTextBox.TabIndex = 13;
+            PasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            PasswordTextBox.Location = new System.Drawing.Point(150, 209);
+            PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.Size = new System.Drawing.Size(192, 24);
+            PasswordTextBox.TabIndex = 13;
             // 
             // UidTextBox
             // 
-            this.UidTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UidTextBox.Location = new System.Drawing.Point(129, 132);
-            this.UidTextBox.Name = "UidTextBox";
-            this.UidTextBox.Size = new System.Drawing.Size(165, 24);
-            this.UidTextBox.TabIndex = 12;
+            UidTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            UidTextBox.Location = new System.Drawing.Point(150, 152);
+            UidTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            UidTextBox.Name = "UidTextBox";
+            UidTextBox.Size = new System.Drawing.Size(192, 24);
+            UidTextBox.TabIndex = 12;
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitButton.Location = new System.Drawing.Point(136, 251);
-            this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(87, 34);
-            this.SubmitButton.TabIndex = 10;
-            this.SubmitButton.Text = "Submit";
-            this.SubmitButton.UseVisualStyleBackColor = true;
-            this.SubmitButton.Click += new System.EventHandler(this.SubmitButtonClick);
+            SubmitButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SubmitButton.Location = new System.Drawing.Point(150, 290);
+            SubmitButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new System.Drawing.Size(102, 39);
+            SubmitButton.TabIndex = 10;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButtonClick;
             // 
             // ColorPanel
             // 
-            this.ColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ColorPanel.Location = new System.Drawing.Point(0, 0);
-            this.ColorPanel.Name = "ColorPanel";
-            this.ColorPanel.Size = new System.Drawing.Size(358, 60);
-            this.ColorPanel.TabIndex = 9;
+            ColorPanel.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            ColorPanel.Location = new System.Drawing.Point(0, 0);
+            ColorPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ColorPanel.Name = "ColorPanel";
+            ColorPanel.Size = new System.Drawing.Size(418, 69);
+            ColorPanel.TabIndex = 9;
             // 
             // CreateButton
             // 
-            this.CreateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateButton.Location = new System.Drawing.Point(153, 317);
-            this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(87, 34);
-            this.CreateButton.TabIndex = 8;
-            this.CreateButton.Text = "Create";
-            this.CreateButton.UseVisualStyleBackColor = true;
+            CreateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            CreateButton.Location = new System.Drawing.Point(178, 366);
+            CreateButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CreateButton.Name = "CreateButton";
+            CreateButton.Size = new System.Drawing.Size(102, 39);
+            CreateButton.TabIndex = 8;
+            CreateButton.Text = "Create";
+            CreateButton.UseVisualStyleBackColor = true;
             // 
             // PasswordLabel
             // 
-            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(12, 181);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(99, 29);
-            this.PasswordLabel.TabIndex = 4;
-            this.PasswordLabel.Text = "Password:";
+            PasswordLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PasswordLabel.Location = new System.Drawing.Point(14, 209);
+            PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            PasswordLabel.Name = "PasswordLabel";
+            PasswordLabel.Size = new System.Drawing.Size(115, 33);
+            PasswordLabel.TabIndex = 4;
+            PasswordLabel.Text = "Password:";
             // 
             // UIdLabel
             // 
-            this.UIdLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UIdLabel.Location = new System.Drawing.Point(25, 132);
-            this.UIdLabel.Name = "UIdLabel";
-            this.UIdLabel.Size = new System.Drawing.Size(86, 29);
-            this.UIdLabel.TabIndex = 2;
-            this.UIdLabel.Text = "UId:";
+            UIdLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            UIdLabel.Location = new System.Drawing.Point(29, 152);
+            UIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            UIdLabel.Name = "UIdLabel";
+            UIdLabel.Size = new System.Drawing.Size(100, 33);
+            UIdLabel.TabIndex = 2;
+            UIdLabel.Text = "UId:";
             // 
             // PortLabel
             // 
-            this.PortLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PortLabel.Location = new System.Drawing.Point(25, 81);
-            this.PortLabel.Name = "PortLabel";
-            this.PortLabel.Size = new System.Drawing.Size(86, 29);
-            this.PortLabel.TabIndex = 0;
-            this.PortLabel.Text = "Port:";
+            PortLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            PortLabel.Location = new System.Drawing.Point(29, 93);
+            PortLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            PortLabel.Name = "PortLabel";
+            PortLabel.Size = new System.Drawing.Size(100, 33);
+            PortLabel.TabIndex = 0;
+            PortLabel.Text = "Port:";
             // 
             // DataBaseDetailsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 315);
-            this.Controls.Add(this.MainPanel);
-            this.Name = "DataBaseDetailsForm";
-            this.Text = "DataBaseDetailsForm";
-            this.MainPanel.ResumeLayout(false);
-            this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PortNumericUpDown)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(418, 363);
+            Controls.Add(MainPanel);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "DataBaseDetailsForm";
+            Text = "DataBaseDetailsForm";
+            MainPanel.ResumeLayout(false);
+            MainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PortNumericUpDown).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

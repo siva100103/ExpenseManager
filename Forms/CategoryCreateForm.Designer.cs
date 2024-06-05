@@ -72,7 +72,7 @@
             // AddButton
             // 
             AddButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            AddButton.Location = new System.Drawing.Point(136, 193);
+            AddButton.Location = new System.Drawing.Point(152, 192);
             AddButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             AddButton.Name = "AddButton";
             AddButton.Size = new System.Drawing.Size(102, 39);
