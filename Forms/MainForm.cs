@@ -226,7 +226,7 @@ namespace ExpenseManager
             {
                 ExpenseManagerClass.AddExistingExpense(exp.ExpenseId, exp.ExpenseCategoryId, exp.ExpenseAmount, exp.ExpenseTime, exp.ExpenseNotes);
             }
-            ExpenseGrid.Rows[0].Cells[0].Selected = false;
+            ExpenseGrid.CurrentCell.Selected = false;
         }
         private void CreateExpenseButtonClick(object sender, EventArgs e)
         {
@@ -300,7 +300,7 @@ namespace ExpenseManager
             {
                 CategoryDataTable.Rows.Add(cat.CategoryId, cat.CategoryName);
             }
-            CategoryGrid.Rows[0].Cells[0].Selected = false;
+            CategoryGrid.CurrentCell.Selected = false;
         }
 
         private void CreateCategoryButtonClick(object sender, EventArgs e)
@@ -369,7 +369,6 @@ namespace ExpenseManager
             SortPageComboBoxUpdater();
             SortTableDataSetter(ExpenseManagerClass.FirstExpenseDate(), ExpenseManagerClass.LastExpenseDate(), null);
         }
-
         private void SortTableDataSetter(DateTime FromDate, DateTime ToDate, string categoryId)
         {
             SortDataTable.Rows.Clear();
@@ -431,7 +430,7 @@ namespace ExpenseManager
             {
                 BudgetDataTable.Rows.Add(budget.Month, budget.Year, budget.Amount);
             }
-            BudgetGrid.Rows[0].Cells[0].Selected = false;
+            BudgetGrid.CurrentCell.Selected = false;
         }
 
         private void AddBudgetButtonClick(object sender, EventArgs e)
@@ -481,6 +480,12 @@ namespace ExpenseManager
             BudgetUpdateForm budgetUpdate = new BudgetUpdateForm(BudgetId);
             budgetUpdate.Show();
         }
+
         #endregion
+
+        private void MenuButtonClick(object sender, EventArgs e)
+        {
+            ContentPanel.Visible = !ContentPanel.Visible;
+        }
     }
 }
