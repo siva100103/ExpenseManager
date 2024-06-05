@@ -19,17 +19,17 @@ namespace ExpenseManager.ManagerClasses
         {
             base.OnConfiguring(optionsBuilder);
             string s = @"./LocalDb.xml";
-            //XmlDocument LocalDb = new XmlDocument();
-            //LocalDb.Load(s);
+            XmlDocument LocalDb = new XmlDocument();
+            LocalDb.Load(s);
 
-            //string port = LocalDb.GetElementsByTagName("Port").Item(0).InnerText;
-            //string Uid = LocalDb.GetElementsByTagName("UId").Item(0).InnerText;
-            //string pwd = LocalDb.GetElementsByTagName("Password").Item(0).InnerText;
+            string port = LocalDb.GetElementsByTagName("Port").Item(0).InnerText;
+            string Uid = LocalDb.GetElementsByTagName("UId").Item(0).InnerText;
+            string pwd = LocalDb.GetElementsByTagName("Password").Item(0).InnerText;
 
-            string ConnectionString = $"server=localhost;port=3306;uid=root;pwd=Suriya@123;database=expensedatabase";
 
-            //string connectionString = $"server=localhost;port={port};uid={Uid};pwd={pwd};database=expensedatabase";
-            optionsBuilder.UseMySql(ConnectionString);
+            string connectionString = $"server=localhost;port={port};uid={Uid};pwd={pwd};database=expensedatabase";
+            ServerVersion serverVersion = ServerVersion.AutoDetect(connectionString);
+            optionsBuilder.UseMySql(connectionString,serverVersion);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

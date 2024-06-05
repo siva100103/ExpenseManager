@@ -28,85 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Mainpanel = new System.Windows.Forms.Panel();
-            this.NameTextBox = new System.Windows.Forms.RichTextBox();
-            this.ColorPanel = new System.Windows.Forms.Panel();
-            this.UpdateButton = new System.Windows.Forms.Button();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.Mainpanel.SuspendLayout();
-            this.SuspendLayout();
+            Mainpanel = new System.Windows.Forms.Panel();
+            NameTextBox = new System.Windows.Forms.TextBox();
+            ColorPanel = new System.Windows.Forms.Panel();
+            UpdateButton = new System.Windows.Forms.Button();
+            NameLabel = new System.Windows.Forms.Label();
+            Mainpanel.SuspendLayout();
+            SuspendLayout();
             // 
             // Mainpanel
             // 
-            this.Mainpanel.BackColor = System.Drawing.Color.White;
-            this.Mainpanel.Controls.Add(this.NameTextBox);
-            this.Mainpanel.Controls.Add(this.ColorPanel);
-            this.Mainpanel.Controls.Add(this.UpdateButton);
-            this.Mainpanel.Controls.Add(this.NameLabel);
-            this.Mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Mainpanel.Location = new System.Drawing.Point(0, 0);
-            this.Mainpanel.Name = "Mainpanel";
-            this.Mainpanel.Size = new System.Drawing.Size(346, 238);
-            this.Mainpanel.TabIndex = 3;
+            Mainpanel.BackColor = System.Drawing.Color.White;
+            Mainpanel.Controls.Add(NameTextBox);
+            Mainpanel.Controls.Add(ColorPanel);
+            Mainpanel.Controls.Add(UpdateButton);
+            Mainpanel.Controls.Add(NameLabel);
+            Mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            Mainpanel.Location = new System.Drawing.Point(0, 0);
+            Mainpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Mainpanel.Name = "Mainpanel";
+            Mainpanel.Size = new System.Drawing.Size(404, 275);
+            Mainpanel.TabIndex = 3;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTextBox.Location = new System.Drawing.Point(117, 90);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(158, 30);
-            this.NameTextBox.TabIndex = 10;
-            this.NameTextBox.Text = "";
+            NameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            NameTextBox.Location = new System.Drawing.Point(136, 107);
+            NameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new System.Drawing.Size(178, 24);
+            NameTextBox.TabIndex = 10;
             // 
             // ColorPanel
             // 
-            this.ColorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ColorPanel.Location = new System.Drawing.Point(0, 0);
-            this.ColorPanel.Name = "ColorPanel";
-            this.ColorPanel.Size = new System.Drawing.Size(346, 60);
-            this.ColorPanel.TabIndex = 9;
+            ColorPanel.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            ColorPanel.Location = new System.Drawing.Point(0, 0);
+            ColorPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ColorPanel.Name = "ColorPanel";
+            ColorPanel.Size = new System.Drawing.Size(404, 69);
+            ColorPanel.TabIndex = 9;
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateButton.Location = new System.Drawing.Point(117, 167);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(87, 34);
-            this.UpdateButton.TabIndex = 8;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.Click += new System.EventHandler(this.UpdateButtonClick);
+            UpdateButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            UpdateButton.Location = new System.Drawing.Point(136, 191);
+            UpdateButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            UpdateButton.Name = "UpdateButton";
+            UpdateButton.Size = new System.Drawing.Size(102, 39);
+            UpdateButton.TabIndex = 8;
+            UpdateButton.Text = "Update";
+            UpdateButton.UseVisualStyleBackColor = true;
+            UpdateButton.Click += UpdateButtonClick;
             // 
             // NameLabel
             // 
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(25, 81);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(86, 44);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Name:";
-            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            NameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            NameLabel.Location = new System.Drawing.Point(29, 93);
+            NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new System.Drawing.Size(100, 51);
+            NameLabel.TabIndex = 0;
+            NameLabel.Text = "Name:";
+            NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CategoryUpdateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 238);
-            this.Controls.Add(this.Mainpanel);
-            this.Name = "CategoryUpdateForm";
-            this.Text = "CategoryUpdateForm";
-            this.Mainpanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(404, 275);
+            Controls.Add(Mainpanel);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "CategoryUpdateForm";
+            Text = "CategoryUpdateForm";
+            Mainpanel.ResumeLayout(false);
+            Mainpanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.Panel Mainpanel;
-        private System.Windows.Forms.RichTextBox NameTextBox;
         private System.Windows.Forms.Panel ColorPanel;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.TextBox NameTextBox;
     }
 }

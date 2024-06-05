@@ -28,128 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.SubmitButton = new System.Windows.Forms.Button();
-            this.AmountBox = new System.Windows.Forms.NumericUpDown();
-            this.YearBox = new System.Windows.Forms.ComboBox();
-            this.MonthBox = new System.Windows.Forms.ComboBox();
-            this.AmountLabel = new System.Windows.Forms.Label();
-            this.YearLabel = new System.Windows.Forms.Label();
-            this.MonthLabel = new System.Windows.Forms.Label();
-            this.ColorPanel = new System.Windows.Forms.Panel();
-            this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AmountBox)).BeginInit();
-            this.SuspendLayout();
+            MainPanel = new System.Windows.Forms.Panel();
+            SubmitButton = new System.Windows.Forms.Button();
+            AmountBox = new System.Windows.Forms.NumericUpDown();
+            YearBox = new System.Windows.Forms.ComboBox();
+            MonthBox = new System.Windows.Forms.ComboBox();
+            AmountLabel = new System.Windows.Forms.Label();
+            YearLabel = new System.Windows.Forms.Label();
+            MonthLabel = new System.Windows.Forms.Label();
+            ColorPanel = new System.Windows.Forms.Panel();
+            MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AmountBox).BeginInit();
+            SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.SubmitButton);
-            this.MainPanel.Controls.Add(this.AmountBox);
-            this.MainPanel.Controls.Add(this.YearBox);
-            this.MainPanel.Controls.Add(this.MonthBox);
-            this.MainPanel.Controls.Add(this.AmountLabel);
-            this.MainPanel.Controls.Add(this.YearLabel);
-            this.MainPanel.Controls.Add(this.MonthLabel);
-            this.MainPanel.Controls.Add(this.ColorPanel);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(0, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(305, 316);
-            this.MainPanel.TabIndex = 0;
+            MainPanel.BackColor = System.Drawing.Color.White;
+            MainPanel.Controls.Add(SubmitButton);
+            MainPanel.Controls.Add(AmountBox);
+            MainPanel.Controls.Add(YearBox);
+            MainPanel.Controls.Add(MonthBox);
+            MainPanel.Controls.Add(AmountLabel);
+            MainPanel.Controls.Add(YearLabel);
+            MainPanel.Controls.Add(MonthLabel);
+            MainPanel.Controls.Add(ColorPanel);
+            MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            MainPanel.Location = new System.Drawing.Point(0, 0);
+            MainPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new System.Drawing.Size(356, 365);
+            MainPanel.TabIndex = 0;
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitButton.Location = new System.Drawing.Point(118, 266);
-            this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(75, 23);
-            this.SubmitButton.TabIndex = 7;
-            this.SubmitButton.Text = "Submit";
-            this.SubmitButton.UseVisualStyleBackColor = true;
-            this.SubmitButton.Click += new System.EventHandler(this.SubmitButtonClick);
+            SubmitButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            SubmitButton.Location = new System.Drawing.Point(138, 306);
+            SubmitButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new System.Drawing.Size(88, 32);
+            SubmitButton.TabIndex = 7;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButtonClick;
             // 
             // AmountBox
             // 
-            this.AmountBox.Location = new System.Drawing.Point(118, 205);
-            this.AmountBox.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.AmountBox.Name = "AmountBox";
-            this.AmountBox.Size = new System.Drawing.Size(146, 20);
-            this.AmountBox.TabIndex = 6;
+            AmountBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            AmountBox.Location = new System.Drawing.Point(138, 237);
+            AmountBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            AmountBox.Maximum = new decimal(new int[] { 1410065408, 2, 0, 0 });
+            AmountBox.Name = "AmountBox";
+            AmountBox.Size = new System.Drawing.Size(170, 24);
+            AmountBox.TabIndex = 6;
             // 
             // YearBox
             // 
-            this.YearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearBox.FormattingEnabled = true;
-            this.YearBox.Location = new System.Drawing.Point(118, 155);
-            this.YearBox.Name = "YearBox";
-            this.YearBox.Size = new System.Drawing.Size(146, 24);
-            this.YearBox.TabIndex = 5;
+            YearBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            YearBox.FormattingEnabled = true;
+            YearBox.Location = new System.Drawing.Point(138, 179);
+            YearBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            YearBox.Name = "YearBox";
+            YearBox.Size = new System.Drawing.Size(170, 24);
+            YearBox.TabIndex = 5;
             // 
             // MonthBox
             // 
-            this.MonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonthBox.FormattingEnabled = true;
-            this.MonthBox.Location = new System.Drawing.Point(118, 97);
-            this.MonthBox.Name = "MonthBox";
-            this.MonthBox.Size = new System.Drawing.Size(146, 24);
-            this.MonthBox.TabIndex = 4;
+            MonthBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            MonthBox.FormattingEnabled = true;
+            MonthBox.Location = new System.Drawing.Point(138, 112);
+            MonthBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonthBox.Name = "MonthBox";
+            MonthBox.Size = new System.Drawing.Size(170, 24);
+            MonthBox.TabIndex = 4;
             // 
             // AmountLabel
             // 
-            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountLabel.Location = new System.Drawing.Point(12, 205);
-            this.AmountLabel.Name = "AmountLabel";
-            this.AmountLabel.Size = new System.Drawing.Size(100, 23);
-            this.AmountLabel.TabIndex = 3;
-            this.AmountLabel.Text = "Amount";
-            this.AmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            AmountLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AmountLabel.Location = new System.Drawing.Point(14, 237);
+            AmountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            AmountLabel.Name = "AmountLabel";
+            AmountLabel.Size = new System.Drawing.Size(117, 27);
+            AmountLabel.TabIndex = 3;
+            AmountLabel.Text = "Amount";
+            AmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // YearLabel
             // 
-            this.YearLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearLabel.Location = new System.Drawing.Point(12, 153);
-            this.YearLabel.Name = "YearLabel";
-            this.YearLabel.Size = new System.Drawing.Size(100, 23);
-            this.YearLabel.TabIndex = 2;
-            this.YearLabel.Text = "Year:";
-            this.YearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            YearLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            YearLabel.Location = new System.Drawing.Point(14, 177);
+            YearLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            YearLabel.Name = "YearLabel";
+            YearLabel.Size = new System.Drawing.Size(117, 27);
+            YearLabel.TabIndex = 2;
+            YearLabel.Text = "Year:";
+            YearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MonthLabel
             // 
-            this.MonthLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonthLabel.Location = new System.Drawing.Point(12, 97);
-            this.MonthLabel.Name = "MonthLabel";
-            this.MonthLabel.Size = new System.Drawing.Size(100, 23);
-            this.MonthLabel.TabIndex = 1;
-            this.MonthLabel.Text = "Month:";
-            this.MonthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            MonthLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            MonthLabel.Location = new System.Drawing.Point(14, 112);
+            MonthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonthLabel.Name = "MonthLabel";
+            MonthLabel.Size = new System.Drawing.Size(117, 27);
+            MonthLabel.TabIndex = 1;
+            MonthLabel.Text = "Month:";
+            MonthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ColorPanel
             // 
-            this.ColorPanel.BackColor = System.Drawing.Color.Cyan;
-            this.ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ColorPanel.Location = new System.Drawing.Point(0, 0);
-            this.ColorPanel.Name = "ColorPanel";
-            this.ColorPanel.Size = new System.Drawing.Size(305, 59);
-            this.ColorPanel.TabIndex = 0;
+            ColorPanel.BackColor = System.Drawing.Color.Cyan;
+            ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            ColorPanel.Location = new System.Drawing.Point(0, 0);
+            ColorPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ColorPanel.Name = "ColorPanel";
+            ColorPanel.Size = new System.Drawing.Size(356, 68);
+            ColorPanel.TabIndex = 0;
             // 
             // BudgetSetForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 316);
-            this.Controls.Add(this.MainPanel);
-            this.Name = "BudgetSetForm";
-            this.Text = "BudgetSetForm";
-            this.MainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AmountBox)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(356, 365);
+            Controls.Add(MainPanel);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "BudgetSetForm";
+            Text = "BudgetSetForm";
+            MainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)AmountBox).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
