@@ -15,14 +15,14 @@ using System.Windows.Forms;
 
 namespace ExpenseManager
 {
-    public partial class MainForm : Form
+    public partial class ExpenseManager : Form
     {
         private DataTable ExpenseDataTable = new DataTable();
         private DataTable CategoryDataTable = new DataTable();
         private DataTable SortDataTable = new DataTable();
         private DataTable BudgetDataTable = new DataTable();
 
-        public MainForm()
+        public ExpenseManager()
         {
             InitializeComponent();
         }
@@ -203,6 +203,12 @@ namespace ExpenseManager
             if (SelectedPage != null && SelectedPage.Parent.Name != c.Parent.Name) SelectedPage.Parent.BackColor = Color.Transparent;
             SelectedPage = c;
         }
+
+        private void MenuButtonClick(object sender, EventArgs e)
+        {
+            ContentPanel.Visible = !ContentPanel.Visible;
+        }
+
         #endregion
 
         #region ExpensePage
@@ -483,9 +489,5 @@ namespace ExpenseManager
 
         #endregion
 
-        private void MenuButtonClick(object sender, EventArgs e)
-        {
-            ContentPanel.Visible = !ContentPanel.Visible;
-        }
     }
 }

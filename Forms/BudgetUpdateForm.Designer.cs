@@ -70,7 +70,7 @@
             // 
             // MonthValueLabel
             // 
-            this.MonthValueLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthValueLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MonthValueLabel.Location = new System.Drawing.Point(128, 90);
             this.MonthValueLabel.Name = "MonthValueLabel";
             this.MonthValueLabel.Size = new System.Drawing.Size(100, 23);
@@ -79,7 +79,7 @@
             // 
             // YearValueLabel
             // 
-            this.YearValueLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearValueLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YearValueLabel.Location = new System.Drawing.Point(118, 141);
             this.YearValueLabel.Name = "YearValueLabel";
             this.YearValueLabel.Size = new System.Drawing.Size(100, 23);
@@ -121,7 +121,7 @@
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitButton.Location = new System.Drawing.Point(122, 259);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(75, 31);

@@ -23,7 +23,7 @@
     <Compile Update="Forms\ExpenseUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MainForm.cs">
+    <Compile Update="Forms\ExpenseManager.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

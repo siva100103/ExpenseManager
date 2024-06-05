@@ -31,6 +31,7 @@ namespace ExpenseManager.Forms
             string Password = PasswordTextBox.Text;
             ExpenseManagerClass.UpdateDbConfiguration(port, Uid, Password);
             Close();
+            MessageBox.Show("Please run Your Application Now","Information",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
         }
     }
 }

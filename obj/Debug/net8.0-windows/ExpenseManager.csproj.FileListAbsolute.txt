@@ -102,7 +102,6 @@ D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.Forms.Categor
 D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.Forms.DataBaseDetailsForm.resources
 D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.Forms.ExpenseCreateForm.resources
 D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.Forms.ExpenseUpdateForm.resources
-D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.MainForm.resources
 D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.Properties.Resources.resources
 D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.UserControls.CategorySelector.resources
 D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.csproj.GenerateResource.cache
@@ -124,3 +123,4 @@ D:\Projects\ExpenseManager\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5
 D:\Projects\ExpenseManager\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 D:\Projects\ExpenseManager\bin\Debug\net8.0-windows\MySqlConnector.dll
 D:\Projects\ExpenseManager\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Projects\ExpenseManager\obj\Debug\net8.0-windows\ExpenseManager.ExpenseManager.resources

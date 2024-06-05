@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.Mainpanel = new System.Windows.Forms.Panel();
-            this.NameTextBox = new System.Windows.Forms.RichTextBox();
             this.ColorPanel = new System.Windows.Forms.Panel();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.Mainpanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,15 +48,6 @@
             this.Mainpanel.Name = "Mainpanel";
             this.Mainpanel.Size = new System.Drawing.Size(346, 238);
             this.Mainpanel.TabIndex = 3;
-            // 
-            // NameTextBox
-            // 
-            this.NameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTextBox.Location = new System.Drawing.Point(117, 90);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(158, 30);
-            this.NameTextBox.TabIndex = 10;
-            this.NameTextBox.Text = "";
             // 
             // ColorPanel
             // 
@@ -80,13 +71,21 @@
             // 
             // NameLabel
             // 
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.Location = new System.Drawing.Point(25, 81);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(86, 44);
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Name:";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameTextBox.Location = new System.Drawing.Point(117, 93);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(153, 24);
+            this.NameTextBox.TabIndex = 10;
             // 
             // CategoryUpdateForm
             // 
@@ -97,6 +96,7 @@
             this.Name = "CategoryUpdateForm";
             this.Text = "CategoryUpdateForm";
             this.Mainpanel.ResumeLayout(false);
+            this.Mainpanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -104,9 +104,9 @@
         #endregion
 
         private System.Windows.Forms.Panel Mainpanel;
-        private System.Windows.Forms.RichTextBox NameTextBox;
         private System.Windows.Forms.Panel ColorPanel;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.TextBox NameTextBox;
     }
 }

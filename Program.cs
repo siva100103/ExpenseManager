@@ -18,12 +18,11 @@ namespace ExpenseManager
         [SupportedOSPlatform("windows")]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             if (ExpenseManagerClass.CheckDbConfiguration())
             {
-                Application.Run(new MainForm());
+                Application.Run(new ExpenseManager());
             }
             else
             {

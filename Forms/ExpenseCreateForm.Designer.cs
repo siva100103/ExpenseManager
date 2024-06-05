@@ -59,7 +59,7 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(401, 379);
+            this.MainPanel.Size = new System.Drawing.Size(375, 379);
             this.MainPanel.TabIndex = 1;
             // 
             // ColorPanel
@@ -68,7 +68,7 @@
             this.ColorPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ColorPanel.Location = new System.Drawing.Point(0, 0);
             this.ColorPanel.Name = "ColorPanel";
-            this.ColorPanel.Size = new System.Drawing.Size(401, 60);
+            this.ColorPanel.Size = new System.Drawing.Size(375, 60);
             this.ColorPanel.TabIndex = 9;
             // 
             // CreateButton
@@ -84,16 +84,16 @@
             // 
             // NotesTextBox
             // 
-            this.NotesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotesTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NotesTextBox.Location = new System.Drawing.Point(136, 235);
             this.NotesTextBox.Name = "NotesTextBox";
-            this.NotesTextBox.Size = new System.Drawing.Size(158, 29);
+            this.NotesTextBox.Size = new System.Drawing.Size(179, 29);
             this.NotesTextBox.TabIndex = 7;
             this.NotesTextBox.Text = "";
             // 
             // NotesLabel
             // 
-            this.NotesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotesLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NotesLabel.Location = new System.Drawing.Point(25, 235);
             this.NotesLabel.Name = "NotesLabel";
             this.NotesLabel.Size = new System.Drawing.Size(75, 29);
@@ -102,15 +102,15 @@
             // 
             // DateTimePicker
             // 
-            this.DateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTimePicker.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimePicker.Location = new System.Drawing.Point(136, 186);
             this.DateTimePicker.Name = "DateTimePicker";
-            this.DateTimePicker.Size = new System.Drawing.Size(158, 22);
+            this.DateTimePicker.Size = new System.Drawing.Size(179, 24);
             this.DateTimePicker.TabIndex = 5;
             // 
             // TimeLabel
             // 
-            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeLabel.Location = new System.Drawing.Point(25, 186);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(86, 29);
@@ -119,7 +119,7 @@
             // 
             // AmountSelector
             // 
-            this.AmountSelector.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountSelector.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AmountSelector.Location = new System.Drawing.Point(136, 139);
             this.AmountSelector.Maximum = new decimal(new int[] {
             300000,
@@ -132,7 +132,7 @@
             0,
             0});
             this.AmountSelector.Name = "AmountSelector";
-            this.AmountSelector.Size = new System.Drawing.Size(158, 22);
+            this.AmountSelector.Size = new System.Drawing.Size(179, 24);
             this.AmountSelector.TabIndex = 3;
             this.AmountSelector.Value = new decimal(new int[] {
             1,
@@ -142,7 +142,7 @@
             // 
             // AmountLabel
             // 
-            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AmountLabel.Location = new System.Drawing.Point(25, 139);
             this.AmountLabel.Name = "AmountLabel";
             this.AmountLabel.Size = new System.Drawing.Size(86, 29);
@@ -151,29 +151,29 @@
             // 
             // CategoryBox
             // 
-            this.CategoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategoryBox.FormattingEnabled = true;
             this.CategoryBox.Location = new System.Drawing.Point(136, 81);
             this.CategoryBox.Name = "CategoryBox";
-            this.CategoryBox.Size = new System.Drawing.Size(158, 24);
+            this.CategoryBox.Size = new System.Drawing.Size(179, 24);
             this.CategoryBox.TabIndex = 1;
             // 
             // CategoryLabel
             // 
-            this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategoryLabel.Location = new System.Drawing.Point(25, 81);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(86, 29);
             this.CategoryLabel.TabIndex = 0;
             this.CategoryLabel.Text = "Category:";
             // 
-            // ExpenseAddForm
+            // ExpenseCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 379);
+            this.ClientSize = new System.Drawing.Size(375, 379);
             this.Controls.Add(this.MainPanel);
-            this.Name = "ExpenseAddForm";
+            this.Name = "ExpenseCreateForm";
             this.Text = "ExpenseAddForm";
             this.MainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AmountSelector)).EndInit();

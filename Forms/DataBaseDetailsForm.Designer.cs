@@ -62,6 +62,7 @@
             // 
             // PortNumericUpDown
             // 
+            this.PortNumericUpDown.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PortNumericUpDown.Location = new System.Drawing.Point(129, 81);
             this.PortNumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -69,21 +70,23 @@
             0,
             0});
             this.PortNumericUpDown.Name = "PortNumericUpDown";
-            this.PortNumericUpDown.Size = new System.Drawing.Size(142, 20);
+            this.PortNumericUpDown.Size = new System.Drawing.Size(165, 24);
             this.PortNumericUpDown.TabIndex = 14;
             // 
             // PasswordTextBox
             // 
+            this.PasswordTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordTextBox.Location = new System.Drawing.Point(129, 181);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(142, 20);
+            this.PasswordTextBox.Size = new System.Drawing.Size(165, 24);
             this.PasswordTextBox.TabIndex = 13;
             // 
             // UidTextBox
             // 
+            this.UidTextBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UidTextBox.Location = new System.Drawing.Point(129, 132);
             this.UidTextBox.Name = "UidTextBox";
-            this.UidTextBox.Size = new System.Drawing.Size(142, 20);
+            this.UidTextBox.Size = new System.Drawing.Size(165, 24);
             this.UidTextBox.TabIndex = 12;
             // 
             // SubmitButton
@@ -118,17 +121,17 @@
             // 
             // PasswordLabel
             // 
-            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(25, 179);
+            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLabel.Location = new System.Drawing.Point(12, 181);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(86, 29);
+            this.PasswordLabel.Size = new System.Drawing.Size(99, 29);
             this.PasswordLabel.TabIndex = 4;
             this.PasswordLabel.Text = "Password:";
             // 
             // UIdLabel
             // 
-            this.UIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UIdLabel.Location = new System.Drawing.Point(25, 130);
+            this.UIdLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UIdLabel.Location = new System.Drawing.Point(25, 132);
             this.UIdLabel.Name = "UIdLabel";
             this.UIdLabel.Size = new System.Drawing.Size(86, 29);
             this.UIdLabel.TabIndex = 2;
@@ -136,7 +139,7 @@
             // 
             // PortLabel
             // 
-            this.PortLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PortLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PortLabel.Location = new System.Drawing.Point(25, 81);
             this.PortLabel.Name = "PortLabel";
             this.PortLabel.Size = new System.Drawing.Size(86, 29);

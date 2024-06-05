@@ -60,10 +60,10 @@
             // 
             // SubmitButton
             // 
-            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitButton.Location = new System.Drawing.Point(118, 266);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(75, 23);
+            this.SubmitButton.Size = new System.Drawing.Size(75, 28);
             this.SubmitButton.TabIndex = 7;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
@@ -71,6 +71,7 @@
             // 
             // AmountBox
             // 
+            this.AmountBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AmountBox.Location = new System.Drawing.Point(118, 205);
             this.AmountBox.Maximum = new decimal(new int[] {
             1410065408,
@@ -78,12 +79,12 @@
             0,
             0});
             this.AmountBox.Name = "AmountBox";
-            this.AmountBox.Size = new System.Drawing.Size(146, 20);
+            this.AmountBox.Size = new System.Drawing.Size(146, 24);
             this.AmountBox.TabIndex = 6;
             // 
             // YearBox
             // 
-            this.YearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YearBox.FormattingEnabled = true;
             this.YearBox.Location = new System.Drawing.Point(118, 155);
             this.YearBox.Name = "YearBox";
@@ -92,7 +93,7 @@
             // 
             // MonthBox
             // 
-            this.MonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthBox.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MonthBox.FormattingEnabled = true;
             this.MonthBox.Location = new System.Drawing.Point(118, 97);
             this.MonthBox.Name = "MonthBox";
