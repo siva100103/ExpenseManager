@@ -7,12 +7,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager.Forms
 {
+    [SupportedOSPlatform("windows")]
+
     public partial class ExpenseCreateForm : Form
     {
         public ExpenseCreateForm()
@@ -33,7 +36,7 @@ namespace ExpenseManager.Forms
             int amount = (int)AmountSelector.Value;
             string notes = NotesTextBox.Text;
             BooleanMsg res=ExpenseManagerClass.CreateExpense(category.CategoryId, amount, time, notes);
-            if (res.Result)
+            if (res)
             {
                 MessageBox.Show("Expense Added Succesfully...!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Close();

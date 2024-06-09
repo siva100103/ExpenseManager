@@ -8,12 +8,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager.Forms
 {
+    [SupportedOSPlatform("windows")]
+
     public partial class CategoryUpdateForm : Form
     {
         private string categoryId;
@@ -28,7 +31,7 @@ namespace ExpenseManager.Forms
         {
             string name = NameTextBox.Text;
             BooleanMsg res = ExpenseManagerClass.UpdateCategory(categoryId,name);
-            if (res.Result)
+            if (res)
             {
                 Close();
                 MessageBox.Show("Category Updated Successfully...!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

@@ -9,12 +9,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager
 {
+    [SupportedOSPlatform("windows")]
+
     public partial class ExpenseManager : Form
     {
         private DataTable ExpenseDataTable = new DataTable();
@@ -73,13 +76,13 @@ namespace ExpenseManager
         }
         private void ExpenseCreated(string ExpenseId)
         {
-            Expense expense = (ExpenseManagerClass.ReadExpense(ExpenseId)).Value;
-            Category category = (ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId)).Value;
+            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
+            Category category = ExpenseManagerClass.ReadCategory(expense.ExpenseCategoryId);
             ExpenseDataTable.Rows.Add(expense.ExpenseId, category.CategoryName, expense.ExpenseAmount, expense.ExpenseTime.ToString(), expense.ExpenseNotes);
         }
         private void ExpenseUpdated(string ExpenseId)
         {
-            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId).Value;
+            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
             foreach (DataGridViewRow rows in ExpenseGrid.Rows)
             {
                 string Id = rows.Cells[0].Value.ToString();
@@ -107,7 +110,7 @@ namespace ExpenseManager
         }
         private void CategoryCreated(string categoryId)
         {
-            Category category = (ExpenseManagerClass.ReadCategory(categoryId)).Value;
+            Category category = ExpenseManagerClass.ReadCategory(categoryId);
             CategoryDataTable.Rows.Add(categoryId, category.CategoryName);
             CategoryGrid.Sort(CategoryGrid.Columns["Name"], ListSortDirection.Ascending);
         }
@@ -142,7 +145,7 @@ namespace ExpenseManager
         }
         private void BudgetCreated(string budgetId)
         {
-            Budget budget = ExpenseManagerClass.ReadBudget(budgetId).Value;
+            Budget budget = ExpenseManagerClass.ReadBudget(budgetId);
             BudgetDataTable.Rows.Add(budget.Month, budget.Year, budget.Amount);
         }
         private void BudgetUpdated(string categoryId)
@@ -152,7 +155,7 @@ namespace ExpenseManager
                 string Id = row.Cells[0].Value.ToString() + "," + row.Cells[1].Value.ToString();
                 if (categoryId == Id)
                 {
-                    Budget budget = ExpenseManagerClass.ReadBudget(Id).Value;
+                    Budget budget = ExpenseManagerClass.ReadBudget(Id);
                     row.Cells[2].Value = budget.Amount;
                     break;
                 }
@@ -264,7 +267,7 @@ namespace ExpenseManager
             {
                 string Id = ExpenseGrid.Rows[ExpenseGrid.CurrentRow.Index].Cells[0].Value.ToString();
                 BooleanMsg res = ExpenseManagerClass.DeleteExpense(Id);
-                if (res.Result)
+                if (res)
                 {
                     MessageBox.Show("Expense Deleted Successfully!!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
@@ -350,7 +353,7 @@ namespace ExpenseManager
             {
                 string categoryId = CategoryGrid.CurrentRow.Cells[0].Value.ToString();
                 BooleanMsg res = ExpenseManagerClass.DeleteCategory(categoryId);
-                if (res.Result) MessageBox.Show("Category Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (res) MessageBox.Show("Category Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else MessageBox.Show(res.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -464,7 +467,7 @@ namespace ExpenseManager
             {
                 string BudgetId = BudgetGrid.CurrentRow.Cells[0].Value.ToString() + "," + BudgetGrid.CurrentRow.Cells[1].Value.ToString();
                 BooleanMsg res = ExpenseManagerClass.DeleteBudget(BudgetId);
-                if (res.Result)
+                if (res)
                 {
                     MessageBox.Show("Budget Deleted SuccessFully...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }

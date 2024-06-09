@@ -18,16 +18,8 @@ namespace ExpenseManager.ManagerClasses
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            string s = @"./LocalDb.xml";
-            XmlDocument LocalDb = new XmlDocument();
-            LocalDb.Load(s);
 
-            string port = LocalDb.GetElementsByTagName("Port").Item(0).InnerText;
-            string Uid = LocalDb.GetElementsByTagName("UId").Item(0).InnerText;
-            string pwd = LocalDb.GetElementsByTagName("Password").Item(0).InnerText;
-
-
-            string connectionString = $"server=localhost;port={port};uid={Uid};pwd={pwd};database=expensedatabase";
+            string connectionString = ExpenseManagerClass.ReadLocalConnectionString();
             ServerVersion serverVersion = ServerVersion.AutoDetect(connectionString);
             optionsBuilder.UseMySql(connectionString,serverVersion);
         }

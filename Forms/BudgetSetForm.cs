@@ -6,12 +6,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager.Forms
 {
+    [SupportedOSPlatform("windows")]
+
     public partial class BudgetSetForm : Form
     {
         public BudgetSetForm()
@@ -41,7 +44,7 @@ namespace ExpenseManager.Forms
             string Year=YearBox.SelectedItem.ToString();
             int amount = (int)AmountBox.Value;
             BooleanMsg res = ExpenseManagerClass.CreateBudget(Month, Year, amount);
-            if (res.Result)
+            if (res)
             {
                 Close();
                 MessageBox.Show("Budget Created Successfully...", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

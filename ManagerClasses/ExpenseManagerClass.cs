@@ -36,7 +36,7 @@ namespace ExpenseManager.ManagerClasses
         public static BooleanMsg AddExistingExpense(string ExpenseId, string categoryId, int Amount, DateTime Time, string Notes)
         {
             //Validation...
-            Category category = ReadCategory(categoryId).Value;
+            Category category = ReadCategory(categoryId);
             if (category == null) return "Invalid Category";
             if (Amount <= 0) return "Amount Must be Greater Than Zero";
 
@@ -59,7 +59,7 @@ namespace ExpenseManager.ManagerClasses
         public static BooleanMsg CreateExpense(string categoryId, int Amount, DateTime Time, string Notes)
         {
             //Validation....
-            Category category = ReadCategory(categoryId).Value;
+            Category category = ReadCategory(categoryId);
             if (category == null) return "Invalid Category";
             if (Amount <= 0) return "Amount Must be Greater Than Zero";
 
@@ -128,7 +128,7 @@ namespace ExpenseManager.ManagerClasses
                 //validation..
                 Expense expense = DbContext.Expenses.Find(ExpenseId);
                 if (expense == null) return "Invalid ExpenseId";
-                Category category = (ReadCategory(categoryId)).Value;
+                Category category = ReadCategory(categoryId);
                 if (category == null) return "Invalid CategoryId";
                 if (amount <= 0) return "Amount Cannot Be Negative";
 
@@ -255,7 +255,7 @@ namespace ExpenseManager.ManagerClasses
         public static BooleanMsg CreateBudget(string month, string year, int amount)
         {
             string s = month + "," + year;
-            Budget budget = ReadBudget(s).Value;
+            Budget budget = ReadBudget(s);
             if (budget != null) return "Budget Already Exists";
             budget = new Budget(month, year, amount);
             using (DbManager dbManager = new DbManager())
@@ -359,6 +359,20 @@ namespace ExpenseManager.ManagerClasses
             LocalDb.GetElementsByTagName("Password").Item(0).InnerText = Password;
             LocalDb.Save(filePath);
         }
+        public static string ReadLocalConnectionString()
+        {
+            string s = @"./LocalDb.xml";
+            XmlDocument LocalDb = new XmlDocument();
+            LocalDb.Load(s);
+
+            string port = LocalDb.GetElementsByTagName("Port").Item(0).InnerText;
+            string Uid = LocalDb.GetElementsByTagName("UId").Item(0).InnerText;
+            string pwd = LocalDb.GetElementsByTagName("Password").Item(0).InnerText;
+
+
+            string connectionString = $"server=localhost;port={port};uid={Uid};pwd={pwd};database=expensedatabase";
+            return connectionString;
+        }
         public static DateTime FirstExpenseDate()
         {
             using (DbManager DbContext = new DbManager())
@@ -381,3 +395,4 @@ namespace ExpenseManager.ManagerClasses
         }
     }
 }
+

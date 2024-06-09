@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,17 +22,19 @@ namespace ExpenseManager.Models
         {
             return new BooleanMsg { Result = false, Message = message };
         }
+
+        public static implicit operator bool(BooleanMsg msg)
+        {
+            return msg.Result;
+        }
     }
 
-    public class BooleanMsg<T>: BooleanMsg
+    public class BooleanMsg<T> where T : class
     {
-
+        public bool Result { get; set; }
+        public string Message { get; set; }
         public T Value { get; set; }
 
-        public static implicit operator BooleanMsg<T>(bool result)
-        {
-            return new BooleanMsg<T> { Result = result, Message = string.Empty };
-        }
 
         public static implicit operator BooleanMsg<T>(string message)
         {
@@ -40,8 +43,13 @@ namespace ExpenseManager.Models
 
         public static implicit operator BooleanMsg<T>(T value)
         {
-
-            return new BooleanMsg<T> { Result= true, Value = value };
+            return new BooleanMsg<T> { Result = true, Value = value };
         }
+
+        public static implicit operator T?(BooleanMsg<T> msg)
+        {
+            return msg.Result ? msg.Value : null;
+        }
+
     }
 }
