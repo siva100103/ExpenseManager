@@ -35,6 +35,10 @@ namespace ExpenseManager.Models
         public string Message { get; set; }
         public T Value { get; set; }
 
+        public static implicit operator bool(BooleanMsg<T> msg)
+        {
+            return msg.Result;
+        }
 
         public static implicit operator BooleanMsg<T>(string message)
         {

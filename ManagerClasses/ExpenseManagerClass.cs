@@ -310,6 +310,8 @@ namespace ExpenseManager.ManagerClasses
         }
 
         #endregion
+
+        #region DataBase
         public static bool CheckDbConfiguration()
         {
             string s = @".\LocalDb.xml";
@@ -392,7 +394,8 @@ namespace ExpenseManager.ManagerClasses
                 expenses.Sort((ex1, ex2) => ex2.ExpenseTime.CompareTo(ex1.ExpenseTime));
                 return expenses[0].ExpenseTime;
             }
-        }
+        } 
+        #endregion
     }
 }
 
