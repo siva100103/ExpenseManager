@@ -21,17 +21,19 @@ namespace ExpenseManager.Forms
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            MessageBox.Show("You Need To Have An Valid MySQl Database To Use this Application.It Seems Your Db Configuration is Not Valid.Please Fill the Form And restart the App","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show("You Need To Have An Valid MySQl Database To Use this Application.It Seems Your Db Configuration is Not Valid.Please Fill the Form And restart the App", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void SubmitButtonClick(object sender, EventArgs e)
         {
-            string port=PortNumericUpDown.Value.ToString();
-            string Uid=UidTextBox.Text;
+            string port = PortNumericUpDown.Value.ToString();
+            string Uid = UidTextBox.Text;
             string Password = PasswordTextBox.Text;
             ExpenseManagerClass.UpdateDbConfiguration(port, Uid, Password);
             Close();
-            MessageBox.Show("Please run Your Application Now","Information",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            MessageBox.Show("Please run Your Application Now", "Information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
+
+        
     }
 }

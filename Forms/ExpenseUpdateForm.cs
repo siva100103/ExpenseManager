@@ -7,12 +7,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager.Forms
 {
+    [SupportedOSPlatform("windows")]
+
     public partial class ExpenseUpdateForm : Form
     {
         private string ExpenseId;
@@ -31,7 +34,7 @@ namespace ExpenseManager.Forms
             categories.Sort((cat1, cat2) => cat1.CategoryName.CompareTo(cat2.CategoryName));
             CategoryBox.DataSource = categories;
             CategoryBox.DisplayMember = "CategoryName";
-            Expense expense = (ExpenseManagerClass.ReadExpense(ExpenseId)).Value;
+            Expense expense = ExpenseManagerClass.ReadExpense(ExpenseId);
             if (expense == null)
             {
                 Close();
@@ -51,7 +54,7 @@ namespace ExpenseManager.Forms
             DateTime time = DateTimePicker.Value;
             string notes = NotesTextBox.Text;
             BooleanMsg res = ExpenseManagerClass.UpdateExpense(ExpenseId,categoryId,amount,time,notes);
-            if (res.Result)
+            if (res)
             {
                 Close();
                 MessageBox.Show("Expense Updated Successfully....", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

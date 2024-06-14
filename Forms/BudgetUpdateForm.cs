@@ -6,12 +6,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager.Forms
 {
+    [SupportedOSPlatform("windows")]
+
     public partial class BudgetUpdateForm : Form
     {
         public Budget budget { get; set; }
@@ -33,7 +36,7 @@ namespace ExpenseManager.Forms
         {
             int amount = (int)AmountValueBox.Value;
             BooleanMsg res = ExpenseManagerClass.UpdateBudget(budget.Month,budget.Year,amount);
-            if (res.Result)
+            if (res)
             {
                 Close();
                 MessageBox.Show("Budget Updated SuccessFully...","Success",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
